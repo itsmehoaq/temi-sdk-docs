@@ -53,7 +53,7 @@ Use this method to fetch all the temi contacts that are synced with the launcher
 - **Prototype**
 
   ``` java
-  List\<UserInfo\> getAllContact();
+  List<UserInfo> getAllContact();
   ```
 
 - **Required permissions**
