@@ -1543,13 +1543,13 @@ Get StandBy status
   | int  | Check result code below |
 
   <ul>
-    <li> -1 for failed to request, maybe robot is not ready
-    <li> 0 for standBy is started
-    <li> 1 for standBy was already running
-    <li> 2 for standby if disabled in settings
-    <li> 3 for robot is busy, e.g. OTA, Greet Mode
-    <li> 403 for SETTINGS permission required
-    <li> 429 for too many requests, should be longer than 5 seconds between 2 calls
+    <li> -1 for failed to request, maybe robot is not ready </li>
+    <li> 0 for standBy is started </li>
+    <li> 1 for standBy was already running </li>
+    <li> 2 for standby if disabled in settings </li>
+    <li> 3 for robot is busy, e.g. OTA, Greet Mode </li>
+    <li> 403 for SETTINGS permission required </li>
+    <li> 429 for too many requests, should be longer than 5 seconds between 2 calls </li>
   </ul>
 
 
@@ -1586,13 +1586,13 @@ Stop StandBy with optional password.
   | int  | Check result code below |
 
   <ul>
-      <li> -1 for failed to request, maybe robot is not ready
-      <li> 0 for standBy is stopped
-      <li> 1 for standBy was not running
-      <li> 2 for password required
-      <li> 3 for wrong password
-      <li> 403 for SETTINGS permission required
-      <li> 429 for too many requests, should be longer than 5 seconds between 2 calls
+      <li> -1 for failed to request, maybe robot is not ready </li>
+      <li> 0 for standBy is stopped </li>
+      <li> 1 for standBy was not running </li>
+      <li> 2 for password required </li>
+      <li> 3 for wrong password </li>
+      <li> 403 for SETTINGS permission required </li>
+      <li> 429 for too many requests, should be longer than 5 seconds between 2 calls </li>
   </ul>
 
 - **Prototype**
@@ -1629,13 +1629,13 @@ Enable or disable StandBy Mode, Disable may need password.
   | int  | Check result code below |
 
   <ul>
-      <li> -1 for failed to request, maybe robot is not ready
-      <li> 0 for operation failed
-      <li> 1 for operation succeed.
-      <li> 2 for password required
-      <li> 3 for wrong password
-      <li> 403 for SETTINGS permission required
-      <li> 429 for too many requests, should be longer than 5 seconds between 2 calls
+      <li> -1 for failed to request, maybe robot is not ready </li>
+      <li> 0 for operation failed </li>
+      <li> 1 for operation succeed. </li>
+      <li> 2 for password required </li>
+      <li> 3 for wrong password </li>
+      <li> 403 for SETTINGS permission required </li>
+      <li> 429 for too many requests, should be longer than 5 seconds between 2 calls </li>
   </ul>
 
 - **Prototype**
