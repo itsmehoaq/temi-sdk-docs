@@ -2114,7 +2114,7 @@ Hard button.
 
 #### Subclass
 
-##### Mode <a
+##### Mode
 
 ###### Prototype
 
