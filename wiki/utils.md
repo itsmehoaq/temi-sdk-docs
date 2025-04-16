@@ -64,7 +64,7 @@
 | int                                    | [startStandBy()](#startStandBy)                                                              | Start StandBy                                               |
 | int                                    | [stopStandBy()](#stopStandBy)                                                                | Stop StandBy with optional password                         |
 | int                                    | [enableStandBy(Boolean enabled, String password)](#enableStandBy)                            | Turn ON/OFF StandBy Mode                                    |
-| [HomeScreenMode]($homescreenmode)      | [getHomeScreenMode()](#gethomescreenmode)                                                    | Get current home screen mode                                |
+| [HomeScreenMode](#homescreenmode)      | [getHomeScreenMode()](#gethomescreenmode)                                                    | Get current home screen mode                                |
 
 | Interface                                                                     | Description                             |
 |-------------------------------------------------------------------------------|-----------------------------------------|
