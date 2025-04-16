@@ -5,7 +5,7 @@ export default defineConfig({
   description: "Temi SDK is your way to develop skills for temi that take advantage of your robot's unique abilities!",
   themeConfig: {
     siteTitle: false,
-    logo: { light: '/assets/logo_dark.svg', dark: '/assets/logo_dark.svg' },
+    logo: { light: '../assets/logo_dark.svg', dark: '../assets/logo_dark.svg' },
     search: {
       provider: 'local'
     },
