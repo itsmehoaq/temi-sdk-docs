@@ -2,90 +2,90 @@
 
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|String|[getSerialNumber()](#getSerialNumber)|Get temi's Serial Number|
-|[BatteryData](#batteryData)|[getBatteryData()](#getBatteryData)|Get temis's Battery information |
-|void|[showTopBar()](#showTopBar)|Show Top Bar|
-|void|[hideTopBar()](#hideTopBar)|Hide Top Bar|
-|void|[showAppList()](#showAppList)|Show App List|
-|boolean|[isHardButtonsDiabled()](#isHardButtonsDisabled)|Is Hard Buttons disabled |
-|void|[setHardButtonsDisabled(boolean disable)](#setHardButtonsDisabled)|Disable/Enable Hard Buttons|
-|boolean|[getPrivacyMode()](#getPrivacyMode)|Is Privacy Mode on|
-|void|[setPrivacyMode(boolean on)](#setPrivacyMode)|Turn on/off Privacy Mode|
-|String|[getLauncherVersion()](#getLauncherVersion)|Get the version of Launcher|
-|String|[getRoboxVersion()](#getRoboxVersion)|Get the version of Robox|
-|void|[toggleWakeup()](#toggleWakeup)|Disable(Enable) wake-up|
-|boolean|[isWakeupDisabled()](#isWakeupDisabled)|Check is wake-up disabled|
-|void|[toggleNavigationBillboard()](#toggleNavigationBillboard)|Hide(show) billboard during go to|
-|boolean|[isNavigationBillboardDisabled()](#isNavigationBillboardDisabled)|Check is billboard invisible during go to|
-|void|[setTopBadgeEnabled(boolean enabled)](#setTopBadgeEnabled)|Enable(Disable) top badge|
-|boolean|[isTopBadgeEnabled()](#isTopBadgeEnabled)|Check is top badge enabled|
-|void|[setAutoReturnOn(boolean on)](#setAutoReturnOn)|Turn on(off) auto-return|
-|boolean|[isAutoReturnOn()](#isAutoReturnOn)|Check is auto-return on|
-|void|[setVolume(int volume)](#setVolume)|Set system volume|
-|int|[getVolume()](#getVolume)|Get system volume|
-|void|[setNavigationSafety(SafetyLevel level)](#setNavigationSafety)|Set obstacles avoidance sensitivity level of navigation|
-|[SafetyLevel](#safetyLevel)|[getNavigationSafety()](#getNavigationSafety)|Get obstacles avoidance sensitivity level of navigation|
-|void|[setGoToSpeed(SpeedLevel level)](#setgotoSpeed)|Set speed level of go-to|
-|[SpeedLevel](#speedLevel)|[getGoToSpeed()](#getgotospeed)|Get speed level of go-to|
-|[SafetyLevel](#safetyLevel)|[getNavigationSafety()](#getNavigationSafety)|Get obstacles avoidance sensitivity level of navigation|
-|int|[setFollowSpeed(SpeedLevel level)](#setfollowspeed)|Set speed level of follow|
-|[SpeedLevel](#speedLevel)|[getFollowSpeed()](#getfollowspeed)|Get speed level of follow|
-|int|[setMinimumObstacleDistance()](#setMinimumObstacleDistance)|set minimum obstacle distance|
-|int|[minimumObstacleDistance()](#minimumObstacleDistance)|Get minimum obstacle distance|
-|void|[restart()](#restart)|Restart temi|
-|void|[startPage(Page page)](#startPage)|Start system internal page|
-|void|[setLocked(boolean locked)](#setLocked)|Enable(disable) protection by password|
-|boolean|[isLocked()](#isLocked)|Check is protection enabled|
-|void|[muteAlexa()](#muteAlexa)|Mute Alexa's microphone|
-|void|[shutdown](#shutdown)|Shutdown temi|
-|void|[setSoundMode(SoundMode soundMode)](#setSoundMode)|Set the mode of sound|
-|void|[setHardButtonMode(HardButton type, HardButton.Mode mode)](#setHardButtonMode)|Set mode for the specific hard button|
-|[HardButton.Mode](#hardButtonMode)|[getHardButtonMode(HardButton type)](#getHardButtonMode)|Get the mode of the specific hard button|
-|[HardButton.Status](#hardbuttonstatus)|[getButtonStatus(HardButton type)](#getbuttonstatus)|Get the status of the specific hard button|
-|String|[getNickName()](#getNickName)|Get temi's nick name|
-|void|[setMode(Mode mode)](#setMode)|Set system mode|
-|[Mode](#mode)|[getMode()](#getMode)|Get system mode|
-|Map\<String, Boolean\>|[getSupportedLatinKeyboards()](#getSupportedLatinKeyboards)|Get all supported Latin keyboards and their enabled status.|
-|void|[enabledLatinKeyboards(List\<String\>)](#enabledLatinKeyboards)|Enable the required Latin keyboard|
-|void|[setGroundDepthCliffDetectionEnabled(boolean enabled)](#setGroundDepthCliffDetectionEnabled)|Enable(Disable) ground depth sensor|
-|boolean|[isGroundDepthCliffDetectionEnabled()](#isGroundDepthCliffDetectionEnabled)|Check is ground depth sensor enabled|
-|boolean|[hasCliffSensor()](#hasCliffSensor)|Check if temi has cliff sensor|
-|void|[setCliffSensorMode(CliffSensorMode cliffSensorMode)](#setCliffSensorMode)|Set the mode of cliff sensor|
-|[CliffSensorMode](#cliffSensorMode)|[getCliffSensorMode()](#getCliffSensorMode)|Check the mode of cliff sensor|
-|void|[setHeadDepthSensitivity(SensitivityLevel sensitivityLevel)](#setHeadDepthSensitivity)|Set the level of the head depth sensitivity|
-|[SensitivityLevel](#sensitivityLevel)|[getHeadDepthSensitivity()](#getHeadDepthSensitivity)|Get the level of the head depth sensitivity|
-|void|[setFrontTOFEnabled(boolean enabled)](#setFrontTOFEnabled)|Enable(Disable) front TOF sensor|
-|boolean|[isFrontTOFEnabled()](#isFrontTOFEnabled)|Check is front TOF sensor enabled|
-|void|[setBackTOFEnabled(boolean enabled)](#setBackTOFEnabled)|Enable(Disable) back TOF sensor|
-|boolean|[isBackTOFEnabled()](#isBackTOFEnabled)|Check is back TOF sensor enabled|
-|boolean|[isStandByOn()](#isStandByOn)|Get StandBy status|
-|int|[startStandBy()](#startStandBy)|Start StandBy|
-|int|[stopStandBy()](#stopStandBy)|Stop StandBy with optional password|
-|int|[enableStandBy(Boolean enabled, String password)](#enableStandBy)|Turn ON/OFF StandBy Mode|
-|[HomeScreenMode]($homescreenmode)|[getHomeScreenMode()](#gethomescreenmode)|Get current home screen mode|
+| Return                                 | Method                                                                                       | Description                                                 |
+|----------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| String                                 | [getSerialNumber()](#getSerialNumber)                                                        | Get temi's Serial Number                                    |
+| [BatteryData](#batteryData)            | [getBatteryData()](#getBatteryData)                                                          | Get temis's Battery information                             |
+| void                                   | [showTopBar()](#showTopBar)                                                                  | Show Top Bar                                                |
+| void                                   | [hideTopBar()](#hideTopBar)                                                                  | Hide Top Bar                                                |
+| void                                   | [showAppList()](#showAppList)                                                                | Show App List                                               |
+| boolean                                | [isHardButtonsDiabled()](#isHardButtonsDisabled)                                             | Is Hard Buttons disabled                                    |
+| void                                   | [setHardButtonsDisabled(boolean disable)](#setHardButtonsDisabled)                           | Disable/Enable Hard Buttons                                 |
+| boolean                                | [getPrivacyMode()](#getPrivacyMode)                                                          | Is Privacy Mode on                                          |
+| void                                   | [setPrivacyMode(boolean on)](#setPrivacyMode)                                                | Turn on/off Privacy Mode                                    |
+| String                                 | [getLauncherVersion()](#getLauncherVersion)                                                  | Get the version of Launcher                                 |
+| String                                 | [getRoboxVersion()](#getRoboxVersion)                                                        | Get the version of Robox                                    |
+| void                                   | [toggleWakeup()](#toggleWakeup)                                                              | Disable(Enable) wake-up                                     |
+| boolean                                | [isWakeupDisabled()](#isWakeupDisabled)                                                      | Check is wake-up disabled                                   |
+| void                                   | [toggleNavigationBillboard()](#toggleNavigationBillboard)                                    | Hide(show) billboard during go to                           |
+| boolean                                | [isNavigationBillboardDisabled()](#isNavigationBillboardDisabled)                            | Check is billboard invisible during go to                   |
+| void                                   | [setTopBadgeEnabled(boolean enabled)](#setTopBadgeEnabled)                                   | Enable(Disable) top badge                                   |
+| boolean                                | [isTopBadgeEnabled()](#isTopBadgeEnabled)                                                    | Check is top badge enabled                                  |
+| void                                   | [setAutoReturnOn(boolean on)](#setAutoReturnOn)                                              | Turn on(off) auto-return                                    |
+| boolean                                | [isAutoReturnOn()](#isAutoReturnOn)                                                          | Check is auto-return on                                     |
+| void                                   | [setVolume(int volume)](#setVolume)                                                          | Set system volume                                           |
+| int                                    | [getVolume()](#getVolume)                                                                    | Get system volume                                           |
+| void                                   | [setNavigationSafety(SafetyLevel level)](#setNavigationSafety)                               | Set obstacles avoidance sensitivity level of navigation     |
+| [SafetyLevel](#safetyLevel)            | [getNavigationSafety()](#getNavigationSafety)                                                | Get obstacles avoidance sensitivity level of navigation     |
+| void                                   | [setGoToSpeed(SpeedLevel level)](#setgotoSpeed)                                              | Set speed level of go-to                                    |
+| [SpeedLevel](#speedLevel)              | [getGoToSpeed()](#getgotospeed)                                                              | Get speed level of go-to                                    |
+| [SafetyLevel](#safetyLevel)            | [getNavigationSafety()](#getNavigationSafety)                                                | Get obstacles avoidance sensitivity level of navigation     |
+| int                                    | [setFollowSpeed(SpeedLevel level)](#setfollowspeed)                                          | Set speed level of follow                                   |
+| [SpeedLevel](#speedLevel)              | [getFollowSpeed()](#getfollowspeed)                                                          | Get speed level of follow                                   |
+| int                                    | [setMinimumObstacleDistance()](#setMinimumObstacleDistance)                                  | set minimum obstacle distance                               |
+| int                                    | [minimumObstacleDistance()](#minimumObstacleDistance)                                        | Get minimum obstacle distance                               |
+| void                                   | [restart()](#restart)                                                                        | Restart temi                                                |
+| void                                   | [startPage(Page page)](#startPage)                                                           | Start system internal page                                  |
+| void                                   | [setLocked(boolean locked)](#setLocked)                                                      | Enable(disable) protection by password                      |
+| boolean                                | [isLocked()](#isLocked)                                                                      | Check is protection enabled                                 |
+| void                                   | [muteAlexa()](#muteAlexa)                                                                    | Mute Alexa's microphone                                     |
+| void                                   | [shutdown](#shutdown)                                                                        | Shutdown temi                                               |
+| void                                   | [setSoundMode(SoundMode soundMode)](#setSoundMode)                                           | Set the mode of sound                                       |
+| void                                   | [setHardButtonMode(HardButton type, HardButton.Mode mode)](#setHardButtonMode)               | Set mode for the specific hard button                       |
+| [HardButton.Mode](#hardButtonMode)     | [getHardButtonMode(HardButton type)](#getHardButtonMode)                                     | Get the mode of the specific hard button                    |
+| [HardButton.Status](#hardbuttonstatus) | [getButtonStatus(HardButton type)](#getbuttonstatus)                                         | Get the status of the specific hard button                  |
+| String                                 | [getNickName()](#getNickName)                                                                | Get temi's nick name                                        |
+| void                                   | [setMode(Mode mode)](#setMode)                                                               | Set system mode                                             |
+| [Mode](#mode)                          | [getMode()](#getMode)                                                                        | Get system mode                                             |
+| Map\<String, Boolean\>                 | [getSupportedLatinKeyboards()](#getSupportedLatinKeyboards)                                  | Get all supported Latin keyboards and their enabled status. |
+| void                                   | [enabledLatinKeyboards(List\<String\>)](#enabledLatinKeyboards)                              | Enable the required Latin keyboard                          |
+| void                                   | [setGroundDepthCliffDetectionEnabled(boolean enabled)](#setGroundDepthCliffDetectionEnabled) | Enable(Disable) ground depth sensor                         |
+| boolean                                | [isGroundDepthCliffDetectionEnabled()](#isGroundDepthCliffDetectionEnabled)                  | Check is ground depth sensor enabled                        |
+| boolean                                | [hasCliffSensor()](#hasCliffSensor)                                                          | Check if temi has cliff sensor                              |
+| void                                   | [setCliffSensorMode(CliffSensorMode cliffSensorMode)](#setCliffSensorMode)                   | Set the mode of cliff sensor                                |
+| [CliffSensorMode](#cliffSensorMode)    | [getCliffSensorMode()](#getCliffSensorMode)                                                  | Check the mode of cliff sensor                              |
+| void                                   | [setHeadDepthSensitivity(SensitivityLevel sensitivityLevel)](#setHeadDepthSensitivity)       | Set the level of the head depth sensitivity                 |
+| [SensitivityLevel](#sensitivityLevel)  | [getHeadDepthSensitivity()](#getHeadDepthSensitivity)                                        | Get the level of the head depth sensitivity                 |
+| void                                   | [setFrontTOFEnabled(boolean enabled)](#setFrontTOFEnabled)                                   | Enable(Disable) front TOF sensor                            |
+| boolean                                | [isFrontTOFEnabled()](#isFrontTOFEnabled)                                                    | Check is front TOF sensor enabled                           |
+| void                                   | [setBackTOFEnabled(boolean enabled)](#setBackTOFEnabled)                                     | Enable(Disable) back TOF sensor                             |
+| boolean                                | [isBackTOFEnabled()](#isBackTOFEnabled)                                                      | Check is back TOF sensor enabled                            |
+| boolean                                | [isStandByOn()](#isStandByOn)                                                                | Get StandBy status                                          |
+| int                                    | [startStandBy()](#startStandBy)                                                              | Start StandBy                                               |
+| int                                    | [stopStandBy()](#stopStandBy)                                                                | Stop StandBy with optional password                         |
+| int                                    | [enableStandBy(Boolean enabled, String password)](#enableStandBy)                            | Turn ON/OFF StandBy Mode                                    |
+| [HomeScreenMode]($homescreenmode)      | [getHomeScreenMode()](#gethomescreenmode)                                                    | Get current home screen mode                                |
 
-|Interface|Description|
-|-|-|
-|[OnBatteryStatusChangedListener](#OnBatteryStatusChangedListener)|Battery Data Status Changed listener|
-|[OnPrivacyModeChangedListener](#OnPrivacyModeChangedListener)|Privacy Mode Changed listener|
-|[OnDisabledFeatureListUpdatedListener](#onDisabledFeatureListUpdatedListener)|Disabled features list updated listener|
-|[OnButtonStatusChangedListener](#onButtonStatusChangedListener)|Hard button status listener|
+| Interface                                                                     | Description                             |
+|-------------------------------------------------------------------------------|-----------------------------------------|
+| [OnBatteryStatusChangedListener](#OnBatteryStatusChangedListener)             | Battery Data Status Changed listener    |
+| [OnPrivacyModeChangedListener](#OnPrivacyModeChangedListener)                 | Privacy Mode Changed listener           |
+| [OnDisabledFeatureListUpdatedListener](#onDisabledFeatureListUpdatedListener) | Disabled features list updated listener |
+| [OnButtonStatusChangedListener](#onButtonStatusChangedListener)               | Hard button status listener             |
 
-|Model|Description|
-|-|-|
-|[BatteryData](#batteryData)|Battery Data|
-|[SafetyLevel](#safetyLevel)|Obstacles avoidance sensitivity level|
-|[SpeedLevel](#speedLevel)|Go to speed level|
-|[Page](#page)|System internal page|
-|[SoundMode](#soundMode)|Sound mode|
-|[HardButton.Mode](#hardButtonMode)|Hard button mode|
-|[HardButton.Status](#hardbuttonstatus)|Hard button status|
-|[Mode](#mode)|System mode|
-|[CliffSensorMode](#cliffSensorMode)|The mode of cliff sensor|
-|[SensitivityLevel](#sensitivityLevel)|Sensitivity level|
-|[HomeScreenMode](#homescreenmode)|Home Screen Mode|
+| Model                                  | Description                           |
+|----------------------------------------|---------------------------------------|
+| [BatteryData](#batteryData)            | Battery Data                          |
+| [SafetyLevel](#safetyLevel)            | Obstacles avoidance sensitivity level |
+| [SpeedLevel](#speedLevel)              | Go to speed level                     |
+| [Page](#page)                          | System internal page                  |
+| [SoundMode](#soundMode)                | Sound mode                            |
+| [HardButton.Mode](#hardButtonMode)     | Hard button mode                      |
+| [HardButton.Status](#hardbuttonstatus) | Hard button status                    |
+| [Mode](#mode)                          | System mode                           |
+| [CliffSensorMode](#cliffSensorMode)    | The mode of cliff sensor              |
+| [SensitivityLevel](#sensitivityLevel)  | Sensitivity level                     |
+| [HomeScreenMode](#homescreenmode)      | Home Screen Mode                      |
 
 <br>
 
@@ -97,9 +97,9 @@ Use this method to fetch temi's serial number. This method can be used if you ne
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|temi's serial number|
+  | Type   | Description          |
+  |--------|----------------------|
+  | String | temi's serial number |
 
 - **Prototype**
 
@@ -123,9 +123,9 @@ Use this method to manually request information on temi's battery. This informat
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[BatteryData](#batteryData)|Battery data|
+  | Type                        | Description  |
+  |-----------------------------|--------------|
+  | [BatteryData](#batteryData) | Battery data |
 
 - **Prototype**
 
@@ -209,9 +209,9 @@ Use this method to get temi's privacy mode status.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true if privacy mode is on, false otherwise|
+  | Type    | Description                                 |
+  |---------|---------------------------------------------|
+  | boolean | true if privacy mode is on, false otherwise |
 
 - **Prototype**
 
@@ -235,9 +235,9 @@ Use this method to set the status programmatically.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |on|boolean|true to turn on privacy mode, false to turn off|
+  | Parameter | Type    | Description                                     |
+  |-----------|---------|-------------------------------------------------|
+  | on        | boolean | true to turn on privacy mode, false to turn off |
 
 - **Prototype**
 
@@ -261,9 +261,9 @@ Use this method to get whether the hardware button is currently disabled.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true if hard buttons is disabled, false otherwise|
+  | Type    | Description                                       |
+  |---------|---------------------------------------------------|
+  | boolean | true if hard buttons is disabled, false otherwise |
 
 - **Prototype**
 
@@ -287,9 +287,9 @@ Use this method to disable or enable hard buttons.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |disable|boolean|true to disable the hard buttons, false to enable hard buttons|
+  | Parameter | Type    | Description                                                    |
+  |-----------|---------|----------------------------------------------------------------|
+  | disable   | boolean | true to disable the hard buttons, false to enable hard buttons |
 
 - **Prototype**
 
@@ -313,15 +313,15 @@ Use this method to get the mode of the specific hard button.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |type|HardButton|Hard button type, [HardButton.MAIN], [HardButton.POWER], [HardButton.VOLUME]|
+  | Parameter | Type       | Description                                                                  |
+  |-----------|------------|------------------------------------------------------------------------------|
+  | type      | HardButton | Hard button type, [HardButton.MAIN], [HardButton.POWER], [HardButton.VOLUME] |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[HardButton.Mode](#hardButtonMode)|The mode of the specific hard button|
+  | Type                               | Description                          |
+  |------------------------------------|--------------------------------------|
+  | [HardButton.Mode](#hardButtonMode) | The mode of the specific hard button |
 
 - **Prototype**
 
@@ -345,10 +345,10 @@ Use this method to set hard button mode for the specific hard button.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |type|[HardButton](#hardButton)|Type of the specific hard button|
-  |mode|[HardButton.Mode](#hardButtonMode)|The mode of the specific hard button(ENABLED, DISABLED, MAIN_BLOCK_FOLLOW)|
+  | Parameter | Type                               | Description                                                                |
+  |-----------|------------------------------------|----------------------------------------------------------------------------|
+  | type      | [HardButton](#hardButton)          | Type of the specific hard button                                           |
+  | mode      | [HardButton.Mode](#hardButtonMode) | The mode of the specific hard button(ENABLED, DISABLED, MAIN_BLOCK_FOLLOW) |
 
 - **Prototype**
 
@@ -372,15 +372,15 @@ Use this method to get the status of the specific hard button.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |type|HardButton|Hard button type, [HardButton.EMERGENCY_STOP]|
+  | Parameter | Type       | Description                                   |
+  |-----------|------------|-----------------------------------------------|
+  | type      | HardButton | Hard button type, [HardButton.EMERGENCY_STOP] |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[HardButton.Status](#hardbuttonstatus)|The status of the specific hard button|
+  | Type                                   | Description                            |
+  |----------------------------------------|----------------------------------------|
+  | [HardButton.Status](#hardbuttonstatus) | The status of the specific hard button |
 
 - **Prototype**
 
@@ -404,9 +404,9 @@ Use this method to get the version of Launcher.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|The version of Launcher|
+  | Type   | Description             |
+  |--------|-------------------------|
+  | String | The version of Launcher |
 
 - **Prototype**
 
@@ -430,9 +430,9 @@ Use this method to get the version of Robox.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|The version of Robox|
+  | Type   | Description          |
+  |--------|----------------------|
+  | String | The version of Robox |
 
 - **Prototype**
 
@@ -456,9 +456,9 @@ In kiosk mode you have the option of toggling the wakeup trigger on and off to y
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |disabled|boolean|Set true(false) to disable(enable)|
+  | Parameter | Type    | Description                        |
+  |-----------|---------|------------------------------------|
+  | disabled  | boolean | Set true(false) to disable(enable) |
 
 - **Prototype**
 
@@ -482,9 +482,9 @@ Check wheather wake-up is disabled.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means disabled(enabled)|
+  | Type    | Description                         |
+  |---------|-------------------------------------|
+  | boolean | true(false) means disabled(enabled) |
 
 - **Prototype**
 
@@ -508,9 +508,9 @@ In kiosk mode you have the option of toggling the visibility of the navigation b
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |disabled|boolean|Set true(false) to hide(show)|
+  | Parameter | Type    | Description                   |
+  |-----------|---------|-------------------------------|
+  | disabled  | boolean | Set true(false) to hide(show) |
 
 - **Prototype**
 
@@ -534,9 +534,9 @@ Check wheather navigation billboard is invisible.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means invisible(visible)|
+  | Type    | Description                          |
+  |---------|--------------------------------------|
+  | boolean | true(false) means invisible(visible) |
 
 - **Prototype**
 
@@ -560,9 +560,9 @@ Enable(Disable) top green badge. When badge is enabled, the movement status will
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |enabled|boolean|Set true(false) to enable(disable) top badge|
+  | Parameter | Type    | Description                                  |
+  |-----------|---------|----------------------------------------------|
+  | enabled   | boolean | Set true(false) to enable(disable) top badge |
 
 - **Prototype**
 
@@ -586,9 +586,9 @@ Check wheather top badge is enabled. Enabled is as the default.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means enabled(disabled)|
+  | Type    | Description                         |
+  |---------|-------------------------------------|
+  | boolean | true(false) means enabled(disabled) |
 
 - **Prototype**
 
@@ -612,9 +612,9 @@ Enable(disable) auto return. With Auto Return ON, temi will return to one of you
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |on|boolean|Set true(false) to turn on(off) auto return|
+  | Parameter | Type    | Description                                 |
+  |-----------|---------|---------------------------------------------|
+  | on        | boolean | Set true(false) to turn on(off) auto return |
 
 - **Prototype**
 
@@ -638,9 +638,9 @@ Check wheather auto return is on. Off is as the default.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|ture(false) means auto return is on(off)|
+  | Type    | Description                              |
+  |---------|------------------------------------------|
+  | boolean | ture(false) means auto return is on(off) |
 
 - **Prototype**
 
@@ -664,9 +664,9 @@ Set the volume of system, the value range is 0-10. In the system, you can adjust
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |volume|int|volume|
+  | Parameter | Type | Description |
+  |-----------|------|-------------|
+  | volume    | int  | volume      |
 
 - **Prototype**
 
@@ -690,9 +690,9 @@ Get the current system volume, the range is 0-10.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|Current volume|
+  | Type | Description    |
+  |------|----------------|
+  | int  | Current volume |
 
 - **Prototype**
 
@@ -710,15 +710,15 @@ Get the current system volume, the range is 0-10.
 
 ---
 
-### setNavigationSafety() <a name="setNavigationSafety" />
+### setNavigationSafety()
 
 Set the sensitivity level of obstacle avoidance during navigation. How to set in Launcher: *Settings > Navigation > Obstacle avoidance sensitivity*.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |level|[SafetyLevel](#safetyLevel)|Obstacle avoidance sensitivity level|
+  | Parameter | Type                        | Description                          |
+  |-----------|-----------------------------|--------------------------------------|
+  | level     | [SafetyLevel](#safetyLevel) | Obstacle avoidance sensitivity level |
 
 - **Prototype**
 
@@ -742,9 +742,9 @@ Get current navigation safety level.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[SafetyLevel](#safetyLevel)|Current obstacle avoidance sensitivity level|
+  | Type                        | Description                                  |
+  |-----------------------------|----------------------------------------------|
+  | [SafetyLevel](#safetyLevel) | Current obstacle avoidance sensitivity level |
 
 - **Prototype**
 
@@ -768,9 +768,9 @@ Set speed level of go to. How to set in Launcher: *Launcher > Navigation > “Go
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |level|[SpeedLevel](#speedLevel)|Speed level|
+  | Parameter | Type                      | Description |
+  |-----------|---------------------------|-------------|
+  | level     | [SpeedLevel](#speedLevel) | Speed level |
 
 - **Prototype**
 
@@ -794,9 +794,9 @@ Get the speed level of go to.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[SpeedLevel](#speedLevel)|Current speed level of go to|
+  | Type                      | Description                  |
+  |---------------------------|------------------------------|
+  | [SpeedLevel](#speedLevel) | Current speed level of go to |
 
 - **Prototype**
 
@@ -820,15 +820,15 @@ Set speed level of follow.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |level|[SpeedLevel](#speedLevel)|Speed level|
+  | Parameter | Type                      | Description |
+  |-----------|---------------------------|-------------|
+  | level     | [SpeedLevel](#speedLevel) | Speed level |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|0 not support by current launcher <br>200 success <br>400 invalid parameter <br>403 SETTINGS Permission required|
+  | Type | Description                                                                                                      |
+  |------|------------------------------------------------------------------------------------------------------------------|
+  | int  | 0 not support by current launcher <br>200 success <br>400 invalid parameter <br>403 SETTINGS Permission required |
 
 - **Prototype**
 
@@ -852,9 +852,9 @@ Get the speed level of follow.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[SpeedLevel](#speedLevel)|Current speed level of follow|
+  | Type                      | Description                   |
+  |---------------------------|-------------------------------|
+  | [SpeedLevel](#speedLevel) | Current speed level of follow |
 
 - **Prototype**
 
@@ -870,15 +870,15 @@ Get the speed level of follow.
 
   1.135.1
 
-### setMinimumObstacleDistance() <a name="setMinimumObstacleDistance" />
+### setMinimumObstacleDistance()
 
 Set minimum obstacle distance to add more safe margin in navigation when you robot is wider than normal because of some add-ons.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |value|int|Value of distance in meters, range from 0 to 100, step by 5|
+  | Parameter | Type | Description                                                 |
+  |-----------|------|-------------------------------------------------------------|
+  | value     | int  | Value of distance in meters, range from 0 to 100, step by 5 |
 
 - **Return**
 
@@ -902,15 +902,15 @@ Set minimum obstacle distance to add more safe margin in navigation when you rob
 
 ---
 
-### minimumObstacleDistance() <a name="minimumObstacleDistance" />
+### minimumObstacleDistance()
 
 Get value of minimum obstacle distance.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|Distance in meters, or error code 400 or 403, if invalid argument or permission required.|
+  | Type | Description                                                                               |
+  |------|-------------------------------------------------------------------------------------------|
+  | int  | Distance in meters, or error code 400 or 403, if invalid argument or permission required. |
 
 - **Prototype**
 
@@ -952,9 +952,9 @@ Using this method to start system internal page.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |page|[Page](#page)|System page|
+  | Parameter | Type          | Description |
+  |-----------|---------------|-------------|
+  | page      | [Page](#page) | System page |
 
 - **Prototype**
 
@@ -978,9 +978,9 @@ Using this method to enable(disable) protection by password.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |locked|boolean|Set true(false) to enable(disable) protection|
+  | Parameter | Type    | Description                                   |
+  |-----------|---------|-----------------------------------------------|
+  | locked    | boolean | Set true(false) to enable(disable) protection |
 
 - **Prototype**
 
@@ -1004,9 +1004,9 @@ Check whether the protection by password is on.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|ture(false) means protection by password is enabled(disabled)|
+  | Type    | Description                                                   |
+  |---------|---------------------------------------------------------------|
+  | boolean | ture(false) means protection by password is enabled(disabled) |
 
 - **Prototype**
 
@@ -1064,9 +1064,9 @@ Use this method to set the sound mode(NORMAL, VIDEO_CALL) that is for improving 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |soundMode|[SoundMode](#soundMode)|The sound mode to be set|
+  | Parameter | Type                    | Description              |
+  |-----------|-------------------------|--------------------------|
+  | soundMode | [SoundMode](#soundMode) | The sound mode to be set |
 
 - **Prototype**
 
@@ -1094,9 +1094,9 @@ Use this method to get the nick name of temi.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|temi's nick name|
+  | Type   | Description      |
+  |--------|------------------|
+  | String | temi's nick name |
 
 - **Prototype**
 
@@ -1120,9 +1120,9 @@ Use this method to set temi's system mode(Default, Greet, Privacy). You can also
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |mode|[Mode](#mode)|System mode|
+  | Parameter | Type          | Description |
+  |-----------|---------------|-------------|
+  | mode      | [Mode](#mode) | System mode |
 
 - **Prototype**
 
@@ -1144,9 +1144,9 @@ Use this method to get the current system mode of temi.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[Mode](#mode)|Current system mode of temi|
+  | Type          | Description                 |
+  |---------------|-----------------------------|
+  | [Mode](#mode) | Current system mode of temi |
 
 - **Prototype**
 
@@ -1170,9 +1170,9 @@ Use this method to get all supported Latin keyboards and their enabled status.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |Map\<String, Boolean\>|Specific language and corresponding enabled status|
+  | Type                   | Description                                        |
+  |------------------------|----------------------------------------------------|
+  | Map\<String, Boolean\> | Specific language and corresponding enabled status |
 
 - **Prototype**
 
@@ -1196,9 +1196,9 @@ Use this method to enable the required Latin keyboard.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |keyboards|List\<String\>|The list of required Latin keyboards and its first element will be the current selected keyboard. **Get all supported Latin keyboards by method [getSupportedLatinKeyboards()](#getSupportedLatinKeyboards)**.|
+  | Parameter | Type           | Description                                                                                                                                                                                                    |
+  |-----------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | keyboards | List\<String\> | The list of required Latin keyboards and its first element will be the current selected keyboard. **Get all supported Latin keyboards by method [getSupportedLatinKeyboards()](#getSupportedLatinKeyboards)**. |
 
 - **Prototype**
 
@@ -1222,9 +1222,9 @@ Use this method to enable(disable) the ground depth sensor. You can also set it 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |enabled|boolean|Set true(false) to enable(disable) ground depth sensor|
+  | Parameter | Type    | Description                                            |
+  |-----------|---------|--------------------------------------------------------|
+  | enabled   | boolean | Set true(false) to enable(disable) ground depth sensor |
 
 - **Prototype**
 
@@ -1248,9 +1248,9 @@ Use this method to check wheather the ground depth sensor is enabled, You can al
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means ground depth sensor is enabled(disabled)|
+  | Type    | Description                                                |
+  |---------|------------------------------------------------------------|
+  | boolean | true(false) means ground depth sensor is enabled(disabled) |
 
 - **Prototype**
 
@@ -1274,9 +1274,9 @@ Use this method to check wheather temi has cliff sensor.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means temi has(does not have) cliff sensor|
+  | Type    | Description                                            |
+  |---------|--------------------------------------------------------|
+  | boolean | true(false) means temi has(does not have) cliff sensor |
 
 - **Prototype**
 
@@ -1302,9 +1302,9 @@ Note, the premise of effectively calling this method is that the machine has a c
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |cliffSensorMode|[CliffSensorMode](#cliffSensorMode)|The mode of cliff sensor|
+  | Parameter       | Type                                | Description              |
+  |-----------------|-------------------------------------|--------------------------|
+  | cliffSensorMode | [CliffSensorMode](#cliffSensorMode) | The mode of cliff sensor |
 
 - **Prototype**
 
@@ -1330,9 +1330,9 @@ Note, the premise of effectively calling this method is that the machine has a c
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[CliffSensorMode](#cliffSensorMode)|The mode of cliff sensor|
+  | Type                                | Description              |
+  |-------------------------------------|--------------------------|
+  | [CliffSensorMode](#cliffSensorMode) | The mode of cliff sensor |
 
 - **Prototype**
 
@@ -1356,9 +1356,9 @@ Use this method to set the sensitivity level of head depth sensor. You can also 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sensitivityLevel|[SensitivityLevel](#sensitivityLevel)|Sensitivity level of head depth sensor|
+  | Parameter        | Type                                  | Description                            |
+  |------------------|---------------------------------------|----------------------------------------|
+  | sensitivityLevel | [SensitivityLevel](#sensitivityLevel) | Sensitivity level of head depth sensor |
 
 - **Prototype**
 
@@ -1382,9 +1382,9 @@ Use this method to get the sensitivity level of head depth sensor. You can also 
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[SensitivityLevel](#sensitivityLevel)|Sensitivity level of head depth sensor|
+  | Type                                  | Description                            |
+  |---------------------------------------|----------------------------------------|
+  | [SensitivityLevel](#sensitivityLevel) | Sensitivity level of head depth sensor |
 
 - **Prototype**
 
@@ -1408,9 +1408,9 @@ Use this method to enable(disable) the front TOF sensor. You can also set it man
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |enabled|boolean|Set true(false) to enabel(disable) front TOF sensor|
+  | Parameter | Type    | Description                                         |
+  |-----------|---------|-----------------------------------------------------|
+  | enabled   | boolean | Set true(false) to enabel(disable) front TOF sensor |
 
 - **Prototype**
 
@@ -1434,9 +1434,9 @@ Use this method to check wheather the front TOF sensor is enabeld. You can also 
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means enabled(disabled)|
+  | Type    | Description                         |
+  |---------|-------------------------------------|
+  | boolean | true(false) means enabled(disabled) |
 
 - **Prototype**
 
@@ -1460,9 +1460,9 @@ Use this method to enable(disable) the back TOF sensor. You can also set it manu
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |enabled|boolean|Set true(false) to enabel(disable) back TOF sensor|
+  | Parameter | Type    | Description                                        |
+  |-----------|---------|----------------------------------------------------|
+  | enabled   | boolean | Set true(false) to enabel(disable) back TOF sensor |
 
 - **Prototype**
 
@@ -1486,9 +1486,9 @@ Use this method to check wheather the back TOF sensor is enabeld. You can also c
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means enabled(disabled)|
+  | Type    | Description                         |
+  |---------|-------------------------------------|
+  | boolean | true(false) means enabled(disabled) |
 
 - **Prototype**
 
@@ -1512,9 +1512,9 @@ Get StandBy status
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true if under standBy status, false if not, null if check failed|
+  | Type    | Description                                                      |
+  |---------|------------------------------------------------------------------|
+  | boolean | true if under standBy status, false if not, null if check failed |
 
 - **Prototype**
 
@@ -1538,9 +1538,9 @@ Get StandBy status
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|Check result code below|
+  | Type | Description             |
+  |------|-------------------------|
+  | int  | Check result code below |
 
   <ul>
     <li> -1 for failed to request, maybe robot is not ready
@@ -1575,15 +1575,15 @@ Stop StandBy with optional password.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |password|String|When temi requires password to unlock, this method only works when here a valid password is passed. <br>Default as empty|
+  | Parameter | Type   | Description                                                                                                              |
+  |-----------|--------|--------------------------------------------------------------------------------------------------------------------------|
+  | password  | String | When temi requires password to unlock, this method only works when here a valid password is passed. <br>Default as empty |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|Check result code below|
+  | Type | Description             |
+  |------|-------------------------|
+  | int  | Check result code below |
 
   <ul>
       <li> -1 for failed to request, maybe robot is not ready
@@ -1617,16 +1617,16 @@ Enable or disable StandBy Mode, Disable may need password.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |enabled|Boolean|true or false to turn ON/OFF StandBy Mode|
-  |password|String|When temi requires password to unlock, this method only works when here a valid password is passed. <br>Default as empty|
+  | Parameter | Type    | Description                                                                                                              |
+  |-----------|---------|--------------------------------------------------------------------------------------------------------------------------|
+  | enabled   | Boolean | true or false to turn ON/OFF StandBy Mode                                                                                |
+  | password  | String  | When temi requires password to unlock, this method only works when here a valid password is passed. <br>Default as empty |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|Check result code below|
+  | Type | Description             |
+  |------|-------------------------|
+  | int  | Check result code below |
 
   <ul>
       <li> -1 for failed to request, maybe robot is not ready
@@ -1660,9 +1660,9 @@ Get current home screen mode,
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |HomeScreenMode|Current home screen mode|
+  | Type           | Description              |
+  |----------------|--------------------------|
+  | HomeScreenMode | Current home screen mode |
 
 - **Prototype**
 
@@ -1700,9 +1700,9 @@ interface OnBatteryStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameters|Type|Description|
-  |-|-|-|
-  |batteryData|[BatteryData](#batteryData)|BatteryData object containing temi's battery status information|
+  | Parameters  | Type                        | Description                                                     |
+  |-------------|-----------------------------|-----------------------------------------------------------------|
+  | batteryData | [BatteryData](#batteryData) | BatteryData object containing temi's battery status information |
 
 - **Prototype**
 
@@ -1714,9 +1714,9 @@ interface OnBatteryStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnBatteryStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                           | Description                                                |
+  |-----------|--------------------------------|------------------------------------------------------------|
+  | listener  | OnBatteryStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1728,9 +1728,9 @@ interface OnBatteryStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnBatteryStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                           | Description                                                |
+  |-----------|--------------------------------|------------------------------------------------------------|
+  | listener  | OnBatteryStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1760,9 +1760,9 @@ interface OnPrivacyModeChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |state|boolean|state will be true if privacy mode is on else flase|
+  | Parameter | Type    | Description                                         |
+  |-----------|---------|-----------------------------------------------------|
+  | state     | boolean | state will be true if privacy mode is on else flase |
 
 - **Prototype**
 
@@ -1774,9 +1774,9 @@ interface OnPrivacyModeChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnPrivacyModeChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                         | Description                                                |
+  |-----------|------------------------------|------------------------------------------------------------|
+  | listener  | OnPrivacyModeChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1788,9 +1788,9 @@ interface OnPrivacyModeChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnPrivacyModeChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                         | Description                                                |
+  |-----------|------------------------------|------------------------------------------------------------|
+  | listener  | OnPrivacyModeChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1820,9 +1820,9 @@ interface OnSdkExceptionListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sdkException|[SdkException](#sdkException)|temi SDK exception information|
+  | Parameter    | Type                          | Description                    |
+  |--------------|-------------------------------|--------------------------------|
+  | sdkException | [SdkException](#sdkException) | temi SDK exception information |
 
 - **Prototype**
 
@@ -1834,9 +1834,9 @@ interface OnSdkExceptionListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnSdkExceptionListener|The object of the class implements this listener interface|
+  | Parameter | Type                   | Description                                                |
+  |-----------|------------------------|------------------------------------------------------------|
+  | listener  | OnSdkExceptionListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1848,9 +1848,9 @@ interface OnSdkExceptionListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnSdkExceptionListener|The object of the class implements this listener interface|
+  | Parameter | Type                   | Description                                                |
+  |-----------|------------------------|------------------------------------------------------------|
+  | listener  | OnSdkExceptionListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1881,10 +1881,10 @@ interface OnButtonStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |hardButton|HardButton|Button type, only support Emergency Stop button.|
-  |status|HardButton.Status|Button status|
+  | Parameter  | Type              | Description                                      |
+  |------------|-------------------|--------------------------------------------------|
+  | hardButton | HardButton        | Button type, only support Emergency Stop button. |
+  | status     | HardButton.Status | Button status                                    |
 
 - **Prototype**
 
@@ -1896,9 +1896,9 @@ interface OnButtonStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnButtonStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                          | Description                                                |
+  |-----------|-------------------------------|------------------------------------------------------------|
+  | listener  | OnButtonStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1910,9 +1910,9 @@ interface OnButtonStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnButtonStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                          | Description                                                |
+  |-----------|-------------------------------|------------------------------------------------------------|
+  | listener  | OnButtonStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1941,9 +1941,9 @@ interface OnDisabledFeatureListUpdatedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |disabledFeatureList|List\<String\>|List of disabled features|
+  | Parameter           | Type           | Description               |
+  |---------------------|----------------|---------------------------|
+  | disabledFeatureList | List\<String\> | List of disabled features |
 
 - **Prototype**
 
@@ -1955,9 +1955,9 @@ interface OnDisabledFeatureListUpdatedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDisabledFeatureListUpdatedListener|The object of the class implements this listener interface|
+  | Parameter | Type                                 | Description                                                |
+  |-----------|--------------------------------------|------------------------------------------------------------|
+  | listener  | OnDisabledFeatureListUpdatedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -1969,9 +1969,9 @@ interface OnDisabledFeatureListUpdatedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDisabledFeatureListUpdatedListener|The object of the class implements this listener interface|
+  | Parameter | Type                                 | Description                                                |
+  |-----------|--------------------------------------|------------------------------------------------------------|
+  | listener  | OnDisabledFeatureListUpdatedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -2003,15 +2003,15 @@ class BatteryData {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|level|int|Battery level in percentage 1-100%|
-|isCharging|boolean|true if temi is charging else false|
-|battery2Level|int|The battery level for the second battery, added in 134 version|
+| Attribute     | Type    | Description                                                    |
+|---------------|---------|----------------------------------------------------------------|
+| level         | int     | Battery level in percentage 1-100%                             |
+| isCharging    | boolean | true if temi is charging else false                            |
+| battery2Level | int     | The battery level for the second battery, added in 134 version |
 
 ---
 
-### SafetyLevel <a name="safetyLevel" />
+### SafetyLevel
 
 Sensitivity level of obstacle avoidance during navigation.
 
@@ -2060,19 +2060,19 @@ class SdkException {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|code|int|Exception code|
-|message|String|Exception message|
+| Attribute | Type   | Description       |
+|-----------|--------|-------------------|
+| code      | int    | Exception code    |
+| message   | String | Exception message |
 
 #### Static constants
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|CODE_ILLEGAL_ARGUMENT|int|400|Illgeal arguments|
-|CODE_PERMISSION_DENIED|int|403|Permission denied|
-|CODE_OPERATION_CONFLICT|int|409|Operation conflict|
-|CODE_LAUNCHER_ERROR|int|500|Interal error in Launcher|
+| Constant                | Type | Value | Description               |
+|-------------------------|------|-------|---------------------------|
+| CODE_ILLEGAL_ARGUMENT   | int  | 400   | Illgeal arguments         |
+| CODE_PERMISSION_DENIED  | int  | 403   | Permission denied         |
+| CODE_OPERATION_CONFLICT | int  | 409   | Operation conflict        |
+| CODE_LAUNCHER_ERROR     | int  | 500   | Interal error in Launcher |
 
 ### Page
 
@@ -2080,15 +2080,15 @@ System internal page.
 
 #### The current system interface that can be started
 
-|Page|Enum Value|Value|
-|-|-|-|
-|Settings|SETTINGS|com.robotemi.page.settings|
-|Map Editor|MAP_EDITOR|com.robotemi.page.map_editor|
-|Contacts|CONTACTS|com.robotemi.page.contacts|
-|Locations|LOCATIONS|com.robotemi.page.locations|
-|App List|ALL_APPS|com.robotemi.page.all_apps|
-|Home Page|HOME|com.robotemi.page.home|
-|Tour list (Supported in 132 version)|TOURS|com.robotemi.page.tours|
+| Page                                 | Enum Value | Value                        |
+|--------------------------------------|------------|------------------------------|
+| Settings                             | SETTINGS   | com.robotemi.page.settings   |
+| Map Editor                           | MAP_EDITOR | com.robotemi.page.map_editor |
+| Contacts                             | CONTACTS   | com.robotemi.page.contacts   |
+| Locations                            | LOCATIONS  | com.robotemi.page.locations  |
+| App List                             | ALL_APPS   | com.robotemi.page.all_apps   |
+| Home Page                            | HOME       | com.robotemi.page.home       |
+| Tour list (Supported in 132 version) | TOURS      | com.robotemi.page.tours      |
 
 #### Prototype
 
@@ -2114,7 +2114,7 @@ Hard button.
 
 #### Subclass
 
-##### Mode <a name="hardButtonMode" />
+##### Mode <a
 
 ###### Prototype
 
@@ -2126,7 +2126,7 @@ Hard button.
   }
   ```
 
-##### Status <a name="hardbuttonstatus" />
+##### Status
 
 ###### Prototype
 
@@ -2187,7 +2187,7 @@ enum Mode {
 
 ---
 
-### CliffSensorMode <a name="cliffSensorMode" />
+### CliffSensorMode
 
 The mode of cliff sensor, including Off, low sensitivity and high sensitivity.
 

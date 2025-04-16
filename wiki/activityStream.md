@@ -4,15 +4,15 @@ Developers can share the image, video to the temi App(installed on mobile phone)
 
 ## API Overview
 
-|Return|Method|
-|-|-|
-|void|[shareActivityObject(ActivityStreamObject activityStreamObject)](#shareActivityObject)|
-|void|[setActivityStreamPublishListener(ActivityStreamPublishListener activityStreamPublishListener)](#setActivityStreamPublishListener)|
+| Return | Method                                                                                                                             |
+|--------|------------------------------------------------------------------------------------------------------------------------------------|
+| void   | [shareActivityObject(ActivityStreamObject activityStreamObject)](#shareActivityObject)                                             |
+| void   | [setActivityStreamPublishListener(ActivityStreamPublishListener activityStreamPublishListener)](#setActivityStreamPublishListener) |
 
-|Model|Description|
-|-|-|
-|[ActivityStreamObject](#activityStreamObject)|-|
-|[ActivityStreamPublishListener](#activityStreamPublishListener)|-|
+| Model                                                           | Description |
+|-----------------------------------------------------------------|-------------|
+| [ActivityStreamObject](#activityStreamObject)                   | -           |
+| [ActivityStreamPublishListener](#activityStreamPublishListener) | -           |
 
 ## Methods
 
@@ -22,17 +22,15 @@ Use this method to check share the activity object to mobile App.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |activityStreamObject|[ActivityStreamObject](#activityStreamObject)|The activity to be shared|
+  | Parameter            | Type                                          | Description               |
+  |----------------------|-----------------------------------------------|---------------------------|
+  | activityStreamObject | [ActivityStreamObject](#activityStreamObject) | The activity to be shared |
 
 - **Prototype**
 
   ``` java
   void shareActivityObject(ActivityStreamObject activityStreamObject);
   ```
-
-<br>
 
 ## Interfaces
 
@@ -50,9 +48,9 @@ interface Robot.ActivityStreamPublishListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |message|[ActivityStreamPublishMessage](#activityStreamPublishMessage)|Pending permissions|
+  | Parameter | Type                                                          | Description         |
+  |-----------|---------------------------------------------------------------|---------------------|
+  | message   | [ActivityStreamPublishMessage](#activityStreamPublishMessage) | Pending permissions |
 
 - **Prototype**
 
@@ -64,9 +62,9 @@ interface Robot.ActivityStreamPublishListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnRequestPermissionResultListener|The object of the class implements this listener interface|
+  | Parameter | Type                              | Description                                                |
+  |-----------|-----------------------------------|------------------------------------------------------------|
+  | listener  | OnRequestPermissionResultListener | The object of the class implements this listener interface |
 
 - **Prototype**
 

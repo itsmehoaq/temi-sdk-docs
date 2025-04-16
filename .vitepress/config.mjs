@@ -32,7 +32,7 @@ export default defineConfig({
           },
           { text: 'Movement', link: 'wiki/movement' },
           { text: 'Speech', link: 'wiki/speech' },
-          { text: 'User & Telepresence', link: 'wiki/userAndTelepresence' },
+          { text: 'User & Telepresence', link: 'wiki/usersAndTelepresence' },
           { text: 'System', link: 'wiki/utils' },
         ]
       },

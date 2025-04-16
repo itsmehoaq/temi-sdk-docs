@@ -1,4 +1,3 @@
-
 # temi Permission
 
 In order to better protect user privacy and temi's data security, a permission mechanism came into being. This is a bit like the dynamic permission application mechanism in Android. When you want to access or modify some sensitive information, you need to apply for these permissions dynamically. The permission mechanism is applicable to **0.10.70** and higher versions.
@@ -184,7 +183,7 @@ The following is the data model used in the above methods and interfaces.
 
 ### Permission
 
-#### Current permissions <a name="currentPermissions" />
+#### Current permissions
 
 |Permission|Enum Value|Value|Is Kiosk Permission|
 |-|-|-|:-:|
@@ -213,5 +212,5 @@ enum Permission {
 
 |Constant|Type|Value|Description|
 |-|-|-|-|
-|GRANTED <a name="granted"/>|int|1|Granted by user|
-|DENIED <a name="denied"/>|int|0|Denied by user|
+|GRANTED|int|1|Granted by user|
+|DENIED|int|0|Denied by user|

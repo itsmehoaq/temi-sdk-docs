@@ -30,9 +30,9 @@ Map
 **Parameters**
 
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |withoutUI|Boolean|Set to true, then it will only show a success notification when it completes<br>Set to false to show a block screen while doing backup.|
+  | Parameter | Type    | Description                                                                                                                           |
+  |-----------|---------|---------------------------------------------------------------------------------------------------------------------------------------|
+  | withoutUI | Boolean | Set to true, then it will only show a success notification when it completes. Set to false to show a block screen while doing backup. |
 
 
 The following code snippet will start a coroutine on IO thread and write the file from pipe to a local file, e.g. `/sdcard/Android/data/com.robotemi.sdk.sample/files/maps/map-1690517863775.tar.gz`
@@ -148,12 +148,12 @@ Map
 **Parameters**
 
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |uri|Uri|`file://` and `content://` schemes of URI are supported|
-  |reposeRequired|boolean|Need to do repose after loading map or not, default as false|
-  |position|[Position](https://github.com/robotemi/sdk/wiki/Locations#position)|The position of robot on the target map to loading the map. If not set, target map will be loaded from home base. Default as null|
-  |withoutUI|boolean|Load the map in the background without showing any blocking UI, default as false|
+  | Parameter      | Type                                                                | Description                                                                                                                       |
+  |----------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+  | uri            | Uri                                                                 | `file://` and `content://` schemes of URI are supported                                                                           |
+  | reposeRequired | boolean                                                             | Need to do repose after loading map or not, default as false                                                                      |
+  | position       | [Position](https://github.com/robotemi/sdk/wiki/Locations#position) | The position of robot on the target map to loading the map. If not set, target map will be loaded from home base. Default as null |
+  | withoutUI      | boolean                                                             | Load the map in the background without showing any blocking UI, default as false                                                  |
 
 
 

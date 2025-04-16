@@ -8,37 +8,37 @@ temi's SDK provides developers tools to utilize, customize and listen to any of 
 
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|void|[speak(TtsRequest ttsRequest)](#speak)|Ask temi to speak(play TTS)|
-|void|[cancelAllTtsRequests()](#cancelAllTtsRequests)|cancel TTS request|
-|void|[wakeup()](#wakeup)|Wake up temi|
-|String|[getWakeupWord()](#getWakeupWord)|Get current wake-up word|
-|void|[askQuestion(String question)](#askQuestion)|temi speak actively and wait for user's reply|
-|void|[finishConversation()](#finishConversation)|Finish a conversation(Stop recording for ASR)|
-|void|[startDefaultNlu(String text, SttLanguage sttLanguage)](#startDefaultNlu)|Trigger default NLU service|
-|boolean|[setTtsVoice(TtsVoice ttsVoice)](#setTtsVoice)|Set TTS voice, speed, and pitch|
-|[TtsVoice](#ttsVoice)|[getTtsVoice()](#getTtsVoice)|Trigger default NLU service|
-|int|[setAsrLanguages()](#setasrlanguages)|Set system ASR languages|
+| Return                | Method                                                                    | Description                                   |
+|-----------------------|---------------------------------------------------------------------------|-----------------------------------------------|
+| void                  | [speak(TtsRequest ttsRequest)](#speak)                                    | Ask temi to speak(play TTS)                   |
+| void                  | [cancelAllTtsRequests()](#cancelAllTtsRequests)                           | cancel TTS request                            |
+| void                  | [wakeup()](#wakeup)                                                       | Wake up temi                                  |
+| String                | [getWakeupWord()](#getWakeupWord)                                         | Get current wake-up word                      |
+| void                  | [askQuestion(String question)](#askQuestion)                              | temi speak actively and wait for user's reply |
+| void                  | [finishConversation()](#finishConversation)                               | Finish a conversation(Stop recording for ASR) |
+| void                  | [startDefaultNlu(String text, SttLanguage sttLanguage)](#startDefaultNlu) | Trigger default NLU service                   |
+| boolean               | [setTtsVoice(TtsVoice ttsVoice)](#setTtsVoice)                            | Set TTS voice, speed, and pitch               |
+| [TtsVoice](#ttsVoice) | [getTtsVoice()](#getTtsVoice)                                             | Trigger default NLU service                   |
+| int                   | [setAsrLanguages()](#setasrlanguages)                                     | Set system ASR languages                      |
 
-|Interface|Description|
-|-|-|
-|[TtsListener](#ttsListener)|TTS status listener|
-|[WakeupWordListener](#wakeupWordListener)|Wake-up event listener|
-|[AsrListener](#asrListener)|ASR result listener|
-|[ConversationViewAttachesListener](#conversationViewAttachesListener)|Conversation view attaches listener|
-|[OnConversationStatusChangedListener](#onConversationStatusChangedListener)|Listener for status chagned of Conversation view|
-|[OnTtsVisualizerWaveFormDataChangedListener](#onTtsVisualizerWaveFormDataChangedListener)|Listener for wave form data changes of TTS audio visualizer|
-|[OnTtsVisualizerFftDataChangedListener](#onTtsVisualizerFftDataChangedListener)|Listener for fft data changes of TTS audio visualizer|
+| Interface                                                                                 | Description                                                 |
+|-------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| [TtsListener](#ttsListener)                                                               | TTS status listener                                         |
+| [WakeupWordListener](#wakeupWordListener)                                                 | Wake-up event listener                                      |
+| [AsrListener](#asrListener)                                                               | ASR result listener                                         |
+| [ConversationViewAttachesListener](#conversationViewAttachesListener)                     | Conversation view attaches listener                         |
+| [OnConversationStatusChangedListener](#onConversationStatusChangedListener)               | Listener for status chagned of Conversation view            |
+| [OnTtsVisualizerWaveFormDataChangedListener](#onTtsVisualizerWaveFormDataChangedListener) | Listener for wave form data changes of TTS audio visualizer |
+| [OnTtsVisualizerFftDataChangedListener](#onTtsVisualizerFftDataChangedListener)           | Listener for fft data changes of TTS audio visualizer       |
 
-|Model|Description|
-|-|-|
-|[TtsRequest](#ttsRequest)|TTS request instance|
-|[TtsVoice](#ttsVoice)|TTS voice configuration|
-|[Gender](#gender)|TTS voice gender|
-|[SttLanguage](#sttlanguage)|ASR / STT languages|
-|[WakeupRequest](#wakeuprequest)|Wakeup behavior|
-|[WakeupOrigin](#wakeuporigin)|Wakeup Origin|
+| Model                           | Description             |
+|---------------------------------|-------------------------|
+| [TtsRequest](#ttsRequest)       | TTS request instance    |
+| [TtsVoice](#ttsVoice)           | TTS voice configuration |
+| [Gender](#gender)               | TTS voice gender        |
+| [SttLanguage](#sttlanguage)     | ASR / STT languages     |
+| [WakeupRequest](#wakeuprequest) | Wakeup behavior         |
+| [WakeupOrigin](#wakeuporigin)   | Wakeup Origin           |
 
 <br>
 
@@ -52,9 +52,9 @@ From 134 verison, if the TtsRequest.id is the same, the requested will be queued
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsRequest|[TtsRequest](#ttsRequest)|An object of type TtsRequest in this object you will add the text to be spoken.|
+  | Parameter  | Type                      | Description                                                                     |
+  |------------|---------------------------|---------------------------------------------------------------------------------|
+  | ttsRequest | [TtsRequest](#ttsRequest) | An object of type TtsRequest in this object you will add the text to be spoken. |
 
 - **Prototype**
 
@@ -101,20 +101,20 @@ In 135 version there is a new parameter WakeupRequest
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |languages|List<[SttLanguage](#sttlanguage)>|Langauges for STT, empty list to use system language. Add in 1.132.0, works with 132 version|
-  |wakeupRequest|WakeupRequest|Control behavior of wake up. Add in 1.135.1, works with 135 version|
+  | Parameter     | Type                              | Description                                                                                  |
+  |---------------|-----------------------------------|----------------------------------------------------------------------------------------------|
+  | languages     | List\<[SttLanguage](#sttlanguage)\> | Langauges for STT, empty list to use system language. Add in 1.132.0, works with 132 version |
+  | wakeupRequest | WakeupRequest                     | Control behavior of wake up. Add in 1.135.1, works with 135 version                          |
 
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sttRequest|SttRequest|Contains languages, and some experimental paramters, added in 133.|
-  |wakeupRequest|WakeupRequest|Control behavior of wake up. Add in 1.135.1, works with 135 version|
+  | Parameter     | Type          | Description                                                         |
+  |---------------|---------------|---------------------------------------------------------------------|
+  | sttRequest    | SttRequest    | Contains languages, and some experimental paramters, added in 133.  |
+  | wakeupRequest | WakeupRequest | Control behavior of wake up. Add in 1.135.1, works with 135 version |
 - **Prototype**
 
   ``` java
-  void wakeup(List<SttLanguege> languages, WakeupRequest wakeupRequest);
+  void wakeup(List\<SttLanguege> languages, WakeupRequest wakeupRequest);
 
   void wakeup(SttRequest sttRequest, WakeupRequest wakeupRequest);
   ```
@@ -135,9 +135,9 @@ Use this method to get temi's wake word assistant.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|Wake-up word|
+  | Type   | Description  |
+  |--------|--------------|
+  | String | Wake-up word |
 
 - **Prototype**
 
@@ -163,14 +163,14 @@ In 133 version, there is an overload method to pass TtsRequest, and SttRequest p
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |question|String|The text to be spoken|
+  | Parameter | Type   | Description           |
+  |-----------|--------|-----------------------|
+  | question  | String | The text to be spoken |
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |question|TtsRequest|The text to be spoken, support all TtsRequest parameters added in 133 version.|
-  |sttRequest|SttRequest|Control the speech in the STT session after the TTS, similiar to `wakeup(SttRequest sttRequest)`, default is null, added in 133 version.|
+  | Parameter  | Type       | Description                                                                                                                              |
+  |------------|------------|------------------------------------------------------------------------------------------------------------------------------------------|
+  | question   | TtsRequest | The text to be spoken, support all TtsRequest parameters added in 133 version.                                                           |
+  | sttRequest | SttRequest | Control the speech in the STT session after the TTS, similiar to `wakeup(SttRequest sttRequest)`, default is null, added in 133 version. |
 
 
 - **Prototype**
@@ -223,10 +223,10 @@ In 1.133.0 version. It will allow to assign system langauge, to trigger an NLU r
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |text|String|Natural language text to be processed|
-  |sttLanguage|[SttLanguage](#sttlanguage)|Language of NLU, default as SttLangauge.SYSTEM, added in 1.133.0|
+  | Parameter   | Type                        | Description                                                      |
+  |-------------|-----------------------------|------------------------------------------------------------------|
+  | text        | String                      | Natural language text to be processed                            |
+  | sttLanguage | [SttLanguage](#sttlanguage) | Language of NLU, default as SttLangauge.SYSTEM, added in 1.133.0 |
 
 - **Prototype**
 
@@ -254,9 +254,9 @@ Use this method to configure your own TTS service. After the correct configurati
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsService|[ITtsService](#ITtsService)|The instance of class that implemented [ITtsService](#ITtsService). If the passed paramenter is `null`, the TTS service will be unbound.|
+  | Parameter  | Type                        | Description                                                                                                                              |
+  |------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+  | ttsService | [ITtsService](#ITtsService) | The instance of class that implemented [ITtsService](#ITtsService). If the passed paramenter is `null`, the TTS service will be unbound. |
 
 - **Prototype**
 
@@ -280,9 +280,9 @@ Use this method to publish the TTS status from your TTS service to temi.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsReqeust|[TtsRequest](#ttsReqeust)|Current instance of [TtsRequest](#ttsReqeust) (need to include status))|
+  | Parameter  | Type                      | Description                                                             |
+  |------------|---------------------------|-------------------------------------------------------------------------|
+  | ttsReqeust | [TtsRequest](#ttsReqeust) | Current instance of [TtsRequest](#ttsReqeust) (need to include status)) |
 
 - **Prototype**
 
@@ -306,15 +306,15 @@ Set TTS voice, speed and pitch. Only available for temi Global version.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsVoice|[TtsVoice](#ttsVoice)|TtsVoice configuration|
+  | Parameter | Type                  | Description            |
+  |-----------|-----------------------|------------------------|
+  | ttsVoice  | [TtsVoice](#ttsVoice) | TtsVoice configuration |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true if set is successful|
+  | Type    | Description               |
+  |---------|---------------------------|
+  | boolean | true if set is successful |
 
 
 - **Prototype**
@@ -339,9 +339,9 @@ Get TTS voice, speed and pitch. Only available for temi Global version.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[TtsVoice](#ttsVoice)|current TTS voice configuration|
+  | Type                  | Description                     |
+  |-----------------------|---------------------------------|
+  | [TtsVoice](#ttsVoice) | current TTS voice configuration |
 
 
 - **Prototype**
@@ -364,15 +364,15 @@ This languages can be temporarily overriden by wakeup()
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|0 OK, -1 invalid, 403 no permission|
+  | Type | Description                         |
+  |------|-------------------------------------|
+  | int  | 0 OK, -1 invalid, 403 no permission |
 
 
 - **Prototype**
 
   ``` java
-  int setAsrLanguages(List<SttLanguage> languages);
+  int setAsrLanguages(List\<SttLanguage> languages);
   ```
 
 - **Required permissions**
@@ -403,9 +403,9 @@ interface Robot.TtsListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsRequest|[TtsRequest](#ttsRequest)|TTS request object that holds its text content and status|
+  | Parameter  | Type                      | Description                                               |
+  |------------|---------------------------|-----------------------------------------------------------|
+  | ttsRequest | [TtsRequest](#ttsRequest) | TTS request object that holds its text content and status |
 
 - **Prototype**
 
@@ -417,9 +417,9 @@ interface Robot.TtsListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|TtsListener|An instance of a class that implements this interface|
+  | Parameter | Type        | Description                                           |
+  |-----------|-------------|-------------------------------------------------------|
+  | listener  | TtsListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -431,9 +431,9 @@ interface Robot.TtsListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|TtsListener|An instance of a class that implements this interface|
+  | Parameter | Type        | Description                                           |
+  |-----------|-------------|-------------------------------------------------------|
+  | listener  | TtsListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -463,11 +463,11 @@ Set your context to implement this listener and add the override method to get w
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |wakeupWord|String|The wakeup word used to trigger|
-  |direction|int|<ul><li>0 - temi was triggered from the front</li><li>90 - temi was triggered from the left</li><li>180 - temi was triggered from the back</li><li>270 - temi was triggered from the right</li><li>555 - cannot detect wakeup direction</li></ul>|
-  |origin|WakeupOrigin|The origin of this wakeup event|
+  | Parameter  | Type         | Description                                                                                                                                                                                                                                       |
+  |------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | wakeupWord | String       | The wakeup word used to trigger                                                                                                                                                                                                                   |
+  | direction  | int          | <ul><li>0 - temi was triggered from the front</li><li>90 - temi was triggered from the left</li><li>180 - temi was triggered from the back</li><li>270 - temi was triggered from the right</li><li>555 - cannot detect wakeup direction</li></ul> |
+  | origin     | WakeupOrigin | The origin of this wakeup event                                                                                                                                                                                                                   |
 
 - **Prototype**
 
@@ -479,9 +479,9 @@ Set your context to implement this listener and add the override method to get w
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|WakeupWordListener|An instance of a class that implements this interface|
+  | Parameter | Type               | Description                                           |
+  |-----------|--------------------|-------------------------------------------------------|
+  | listener  | WakeupWordListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -493,9 +493,9 @@ Set your context to implement this listener and add the override method to get w
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|WakeupWordListener|An instance of a class that implements this interface|
+  | Parameter | Type               | Description                                           |
+  |-----------|--------------------|-------------------------------------------------------|
+  | listener  | WakeupWordListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -527,10 +527,10 @@ interface Robot.AsrListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |asrResult|String|The ASR result|
-  |sttLanguage|SttLanguage|The language of the ASR result (Added in 132)|
+  | Parameter   | Type        | Description                                   |
+  |-------------|-------------|-----------------------------------------------|
+  | asrResult   | String      | The ASR result                                |
+  | sttLanguage | SttLanguage | The language of the ASR result (Added in 132) |
 
 - **Prototype**
 
@@ -542,9 +542,9 @@ interface Robot.AsrListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|AsrListener|An instance of a class that implements this interface|
+  | Parameter | Type        | Description                                           |
+  |-----------|-------------|-------------------------------------------------------|
+  | listener  | AsrListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -556,9 +556,9 @@ interface Robot.AsrListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|AsrListener|An instance of a class that implements this interface|
+  | Parameter | Type        | Description                                           |
+  |-----------|-------------|-------------------------------------------------------|
+  | listener  | AsrListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -588,9 +588,9 @@ interface Robot.ConversationViewAttachesListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |isAttached|boolean|`true` means the conversation view attaches, `false` otherwise|
+  | Parameter  | Type    | Description                                                    |
+  |------------|---------|----------------------------------------------------------------|
+  | isAttached | boolean | `true` means the conversation view attaches, `false` otherwise |
 
 - **Prototype**
 
@@ -602,9 +602,9 @@ interface Robot.ConversationViewAttachesListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|ConversationViewAttachesListener|An instance of a class that implements this interface|
+  | Parameter | Type                             | Description                                           |
+  |-----------|----------------------------------|-------------------------------------------------------|
+  | listener  | ConversationViewAttachesListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -616,9 +616,9 @@ interface Robot.ConversationViewAttachesListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|ConversationViewAttachesListener|An instance of a class that implements this interface|
+  | Parameter | Type                             | Description                                           |
+  |-----------|----------------------------------|-------------------------------------------------------|
+  | listener  | ConversationViewAttachesListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -650,21 +650,21 @@ interface OnConversationStatusChangedListener {}
 
 All constants here are only for the status of Conversation layer.
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|IDLE|int|0|Idle, no useriteraction|
-|LISTENING|int|1|Listening user's voice|
-|THINKING|int|2|Doing NLP|
-|SPEAKING|int|3|Playing TTS|
+| Constant  | Type | Value | Description             |
+|-----------|------|-------|-------------------------|
+| IDLE      | int  | 0     | Idle, no useriteraction |
+| LISTENING | int  | 1     | Listening user's voice  |
+| THINKING  | int  | 2     | Doing NLP               |
+| SPEAKING  | int  | 3     | Playing TTS             |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |status|int|Status of Conversation layer|
-  |text|String|Text of Conversation layer|
+  | Parameter | Type   | Description                  |
+  |-----------|--------|------------------------------|
+  | status    | int    | Status of Conversation layer |
+  | text      | String | Text of Conversation layer   |
 
 - **Prototype**
 
@@ -676,9 +676,9 @@ All constants here are only for the status of Conversation layer.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnConversationStatusChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                | Description                                           |
+  |-----------|-------------------------------------|-------------------------------------------------------|
+  | listener  | OnConversationStatusChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -690,9 +690,9 @@ All constants here are only for the status of Conversation layer.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnConversationStatusChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                | Description                                           |
+  |-----------|-------------------------------------|-------------------------------------------------------|
+  | listener  | OnConversationStatusChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -722,9 +722,9 @@ interface OnTtsVisualizerWaveFormDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |waveForm|byte[]|Wave form data|
+  | Parameter | Type   | Description    |
+  |-----------|--------|----------------|
+  | waveForm  | byte[] | Wave form data |
 
 - **Prototype**
 
@@ -736,9 +736,9 @@ interface OnTtsVisualizerWaveFormDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTtsVisualizerWaveFormDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                       | Description                                           |
+  |-----------|--------------------------------------------|-------------------------------------------------------|
+  | listener  | OnTtsVisualizerWaveFormDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -750,9 +750,9 @@ interface OnTtsVisualizerWaveFormDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTtsVisualizerWaveFormDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                       | Description                                           |
+  |-----------|--------------------------------------------|-------------------------------------------------------|
+  | listener  | OnTtsVisualizerWaveFormDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -782,9 +782,9 @@ interface OnTtsVisualizerFftDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |fft|byte[]|fft data|
+  | Parameter | Type   | Description |
+  |-----------|--------|-------------|
+  | fft       | byte[] | fft data    |
 
 - **Prototype**
 
@@ -796,9 +796,9 @@ interface OnTtsVisualizerFftDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTtsVisualizerFftDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                  | Description                                           |
+  |-----------|---------------------------------------|-------------------------------------------------------|
+  | listener  | OnTtsVisualizerFftDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -810,9 +810,9 @@ interface OnTtsVisualizerFftDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTtsVisualizerFftDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                  | Description                                           |
+  |-----------|---------------------------------------|-------------------------------------------------------|
+  | listener  | OnTtsVisualizerFftDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -840,15 +840,15 @@ interface ITtsService {}
 
 #### Abstract methods
 
-##### speak() <a name="ITtsService.speak" />
+##### speak()
 
 temi will call this method indirectly to play TTS.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |ttsRequest|[TtsRequest](#ttsRequest)|Pending [TtsRequest](#ttsRequest) instance|
+  | Parameter  | Type                      | Description                                |
+  |------------|---------------------------|--------------------------------------------|
+  | ttsRequest | [TtsRequest](#ttsRequest) | Pending [TtsRequest](#ttsRequest) instance |
 
 - **Prototype**
 
@@ -856,7 +856,7 @@ temi will call this method indirectly to play TTS.
   void speak(TtsRequest ttsRequest);
   ```
 
-##### cancel()  <a name="ITtsService.cancel" />
+##### cancel()
 
 temi will call this method indirectly to cancel(stop) current TTS.
 
@@ -866,7 +866,7 @@ temi will call this method indirectly to cancel(stop) current TTS.
   void cancel();
   ```
 
-##### pause()  <a name="ITtsService.pause" />
+##### pause()
 
 temi will call this method indirectly to pause current TTS.
 
@@ -876,7 +876,7 @@ temi will call this method indirectly to pause current TTS.
   void pause();
   ```
 
-##### resume()  <a name="ITtsService.resume" />
+##### resume()
 
 temi will call this method indirectly to resume current TTS.
 
@@ -908,16 +908,16 @@ class TtsRequest {}
 
 #### Subclass
 
-- **Status** <a name="ttsRequestStatus" />
+- **Status**
 
-  - **The status currently in use** <a name="currentStatus" />
+  - **The status currently in use**
 
-    |Status|description|
-    |-|-|
-    |STARTED|Start playing|
-    |COMPLETED|Finish playing|
-    |ERROR|Errors occurred while playing|
-    |NOT_ALLOWED|Play is not allowed|
+    | Status      | description                   |
+    |-------------|-------------------------------|
+    | STARTED     | Start playing                 |
+    | COMPLETED   | Finish playing                |
+    | ERROR       | Errors occurred while playing |
+    | NOT_ALLOWED | Play is not allowed           |
 
   - **Prototype**
 
@@ -932,39 +932,39 @@ class TtsRequest {}
     }
     ```
 
-- **Language** <a name="ttsLanguage" />
+- **Language**
 
-  - **Current supported TTS language** <a name="currentTtsLanguage" />
+  - **Current supported TTS language**
   
-    |Language|Description|
-    |-|-|
-    |SYSTEM(0)|Follow system|
-    |EN_US(1)|English (United States)|
-    |ZH_CN(2)|Chinese (Mandarin, Simplified)|
-    |ZH_HK(3)|Chinese (Cantonese, Traditional)|
-    |ZH_TW(4)|Chinese (Taiwanese Mandarin)|
-    |TH_TH(5)|Thai (Thailand)|
-    |HE_IL(6)|Hebrew (Israel)|
-    |KO_KR(7)|Korean (Korea)|
-    |JA_JP(8)|Japanese (Japan)|
-    |ID_ID(10)|Indonesian (Indonesia)|
-    |DE_DE(11)|German (Germany)|
-    |FR_FR(12)|French (France)|
-    |FR_CA(13)|French (Canada)|
-    |PT_BR(14)|Portuguese (Brazil)|
-    |AR_EG(15)|Arabic (Egypt)|
-    |RU_RU(18)|Russian (Russia)|
-    |IT_IT(19)|Italian (Italy)|
-    |PL_PL(20)|Polish (Poland)|
-    |ES_ES(21)|Spanish (Spain)|
-    |CA_ES(22)|Catalan (Spain) (supported from 130 version)|
-    |HI_IN(23)|Hindi (supported from 130 version)|
-    |ET_EE(24)|Estonian (supported from 131 version)|
-    |TR_TR(25)|Turkish (supported from 131 version)|
-    |EN_IN(26)|English (India) (supported from 133 version)|
-    |MS_MY(27)|Malay (supported from 134 version)|
-    |VI_VN(28)|Vietnamese (supported from 134 version)|
-    |EL_GR(29)|Greek (supported from 134 version)|
+    | Language  | Description                                  |
+    |-----------|----------------------------------------------|
+    | SYSTEM(0) | Follow system                                |
+    | EN_US(1)  | English (United States)                      |
+    | ZH_CN(2)  | Chinese (Mandarin, Simplified)               |
+    | ZH_HK(3)  | Chinese (Cantonese, Traditional)             |
+    | ZH_TW(4)  | Chinese (Taiwanese Mandarin)                 |
+    | TH_TH(5)  | Thai (Thailand)                              |
+    | HE_IL(6)  | Hebrew (Israel)                              |
+    | KO_KR(7)  | Korean (Korea)                               |
+    | JA_JP(8)  | Japanese (Japan)                             |
+    | ID_ID(10) | Indonesian (Indonesia)                       |
+    | DE_DE(11) | German (Germany)                             |
+    | FR_FR(12) | French (France)                              |
+    | FR_CA(13) | French (Canada)                              |
+    | PT_BR(14) | Portuguese (Brazil)                          |
+    | AR_EG(15) | Arabic (Egypt)                               |
+    | RU_RU(18) | Russian (Russia)                             |
+    | IT_IT(19) | Italian (Italy)                              |
+    | PL_PL(20) | Polish (Poland)                              |
+    | ES_ES(21) | Spanish (Spain)                              |
+    | CA_ES(22) | Catalan (Spain) (supported from 130 version) |
+    | HI_IN(23) | Hindi (supported from 130 version)           |
+    | ET_EE(24) | Estonian (supported from 131 version)        |
+    | TR_TR(25) | Turkish (supported from 131 version)         |
+    | EN_IN(26) | English (India) (supported from 133 version) |
+    | MS_MY(27) | Malay (supported from 134 version)           |
+    | VI_VN(28) | Vietnamese (supported from 134 version)      |
+    | EL_GR(29) | Greek (supported from 134 version)           |
 
   - **Prototype**
 
@@ -1005,16 +1005,16 @@ class TtsRequest {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|id|[UUID](https://developer.android.com/reference/java/util/UUID)|Unique number that identifies each tts request|
-|speech|String|The text to be spoken|
-|packageName|String|Skill package name so that temi knows who made the request|
-|status|[Status](#ttsRequestStatus)|Status of the request|
-|isShowOnConversationLayer|boolean|Should the conversation line be shown when temi speaks the text.</br> **Note:** Only relevant for 'Hey temi' assistant skills|
-|language|int|Language|
-|showAnimationOnly|boolean|true if you want to show a face animation while the speech is ongoing.<br>This only works if there is an assigned interaction animation in temi Settings,<br>otherwise it will just display the text on screen without a face animation.<br>Set this as true will override `isShowOnConversationLayer` if that value is set to false|
-|cached|boolean|true if you want to have this tts cached. Default as false.<br>If there is cache, it will be spoken offline.<br> This is useful for TTS from some sentences you have in the strings.xml (Supported from 129 version)|
+| Attribute                 | Type                                                           | Description                                                                                                                                                                                                                                                                                                                          |
+|---------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                        | [UUID](https://developer.android.com/reference/java/util/UUID) | Unique number that identifies each tts request                                                                                                                                                                                                                                                                                       |
+| speech                    | String                                                         | The text to be spoken                                                                                                                                                                                                                                                                                                                |
+| packageName               | String                                                         | Skill package name so that temi knows who made the request                                                                                                                                                                                                                                                                           |
+| status                    | [Status](#ttsRequestStatus)                                    | Status of the request                                                                                                                                                                                                                                                                                                                |
+| isShowOnConversationLayer | boolean                                                        | Should the conversation line be shown when temi speaks the text.</br> **Note:** Only relevant for 'Hey temi' assistant skills                                                                                                                                                                                                        |
+| language                  | int                                                            | Language                                                                                                                                                                                                                                                                                                                             |
+| showAnimationOnly         | boolean                                                        | true if you want to show a face animation while the speech is ongoing.<br>This only works if there is an assigned interaction animation in temi Settings,<br>otherwise it will just display the text on screen without a face animation.<br>Set this as true will override `isShowOnConversationLayer` if that value is set to false |
+| cached                    | boolean                                                        | true if you want to have this tts cached. Default as false.<br>If there is cache, it will be spoken offline.<br> This is useful for TTS from some sentences you have in the strings.xml (Supported from 129 version)                                                                                                                 |
 
 #### Static methods
 
@@ -1022,19 +1022,19 @@ Create a TtsRequest object and pass it to [speak(TtsRequest ttsRequest)](#speak)
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |speech|String|The text to be spoken|
-  |isShowOnConversationLayer|boolean|default as true|
-  |language|[Language](#ttsLanguage)|default as `Language.SYSTEM`|
-  |showAnimationOnly|boolean|default as false|
-  |cached|boolean|default as false|
+  | Parameter                 | Type                     | Description                  |
+  |---------------------------|--------------------------|------------------------------|
+  | speech                    | String                   | The text to be spoken        |
+  | isShowOnConversationLayer | boolean                  | default as true              |
+  | language                  | [Language](#ttsLanguage) | default as `Language.SYSTEM` |
+  | showAnimationOnly         | boolean                  | default as false             |
+  | cached                    | boolean                  | default as false             |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[TtsRequest](#ttsRequest)|TTS request object created by this method|
+  | Type                      | Description                               |
+  |---------------------------|-------------------------------------------|
+  | [TtsRequest](#ttsRequest) | TTS request object created by this method |
 
 - **Prototype**
 
@@ -1058,11 +1058,11 @@ class TtsVoice {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|gender|[Gender](#gender)|only female and male can be used as parameter|
-|speed|float|0.5 - 2.0,   stepping by 0.1, default 1.0|
-|pitch|int|-10 - 10,    stepping by 1, default 0|
+| Attribute | Type              | Description                                   |
+|-----------|-------------------|-----------------------------------------------|
+| gender    | [Gender](#gender) | only female and male can be used as parameter |
+| speed     | float             | 0.5 - 2.0,   stepping by 0.1, default 1.0     |
+| pitch     | int               | -10 - 10,    stepping by 1, default 0         |
 
 ---
 
@@ -1081,38 +1081,38 @@ enum class Gender {
 ```
 
 
-### SttLanguage <a name="sttlanguage" />
+### SttLanguage
 
-  - **Current supported ASR language** <a name="currentSttLanguage" />
+  - **Current supported ASR language**
   
-    |Language|Description|
-    |-|-|
-    |SYSTEM(0)|Follow system|
-    |EN_US(1)|English (United States)|
-    |ZH_CN(2)|Chinese (Mandarin, Simplified)|
-    |JA_JP(3)|Japanese (Japan)|
-    |KO_KR(4)|Korean (Korea)|
-    |ZH_HK(5)|Chinese (Cantonese, Traditional)|
-    |ZH_TW(6)|Chinese (Taiwanese Mandarin)|
-    |DE_DE(7)|German (Germany)|
-    |TH_TH(8)|Thai (Thailand)|
-    |IN_ID(9)|Indonesian (Indonesia)|
-    |PT_BR(10)|Portuguese (Brazil)|
-    |AR_EG(11)|Arabic (Egypt)|
-    |FR_CA(12)|French (Canada)|
-    |FR_FR(13)|French (France)|
-    |ES_ES(14)|Spanish (Spain)|
-    |CA_ES(15)|Catalan (Spain)|
-    |IW_IL(16)|Hebrew (Israel)|
-    |IT_IT(17)|Italian (Italy)|
-    |ET_EE(18)|Estonian|
-    |TR_TR(19)|Turkish|
-    |HI_IN(20)|Hindi, added in 1.133.0 version|
-    |EN_IN(21)|English (India), added in 1.133.0 version|
-    |MS_MY(22)|Malay, added in 134 version|
-    |VI_VN(23)|Vietnamese, added in 134 version|
-    |RU_RU(24)|Russian, added in 134 version|
-    |EL_GR(25)|Greek, added in 134 version|
+    | Language  | Description                               |
+    |-----------|-------------------------------------------|
+    | SYSTEM(0) | Follow system                             |
+    | EN_US(1)  | English (United States)                   |
+    | ZH_CN(2)  | Chinese (Mandarin, Simplified)            |
+    | JA_JP(3)  | Japanese (Japan)                          |
+    | KO_KR(4)  | Korean (Korea)                            |
+    | ZH_HK(5)  | Chinese (Cantonese, Traditional)          |
+    | ZH_TW(6)  | Chinese (Taiwanese Mandarin)              |
+    | DE_DE(7)  | German (Germany)                          |
+    | TH_TH(8)  | Thai (Thailand)                           |
+    | IN_ID(9)  | Indonesian (Indonesia)                    |
+    | PT_BR(10) | Portuguese (Brazil)                       |
+    | AR_EG(11) | Arabic (Egypt)                            |
+    | FR_CA(12) | French (Canada)                           |
+    | FR_FR(13) | French (France)                           |
+    | ES_ES(14) | Spanish (Spain)                           |
+    | CA_ES(15) | Catalan (Spain)                           |
+    | IW_IL(16) | Hebrew (Israel)                           |
+    | IT_IT(17) | Italian (Italy)                           |
+    | ET_EE(18) | Estonian                                  |
+    | TR_TR(19) | Turkish                                   |
+    | HI_IN(20) | Hindi, added in 1.133.0 version           |
+    | EN_IN(21) | English (India), added in 1.133.0 version |
+    | MS_MY(22) | Malay, added in 134 version               |
+    | VI_VN(23) | Vietnamese, added in 134 version          |
+    | RU_RU(24) | Russian, added in 134 version             |
+    | EL_GR(25) | Greek, added in 134 version               |
 
   #### **Prototype**
 
@@ -1163,9 +1163,9 @@ data class WakeupRequest(
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|wakeupResponse|Boolean|whether wakeup response will be triggered|
+| Attribute      | Type    | Description                               |
+|----------------|---------|-------------------------------------------|
+| wakeupResponse | Boolean | whether wakeup response will be triggered |
 ---
 
 ### WakeupOrigin
@@ -1187,21 +1187,21 @@ enum class WakeupOrigin {
 ```
 #### Attributes
 
-|Attribute|Description|
-|-|-|
-|ROBOX|listening from Robox, apply for V3|
-|ANDROID|listening from Android, apply for temi GO and temi Platform|
-|TOP_BAR|trigger by touch on top bar wake up button|
-|SDK|trigger by SDK wakeup() method from an app|
-|ANALOG|trigger by temi internal flow, like dynamic mode auto-listening, continuous conversation etc.|
-|UNKNOWN|unknown origin under current SDK version|
+| Attribute | Description                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| ROBOX     | listening from Robox, apply for V3                                                            |
+| ANDROID   | listening from Android, apply for temi GO and temi Platform                                   |
+| TOP_BAR   | trigger by touch on top bar wake up button                                                    |
+| SDK       | trigger by SDK wakeup() method from an app                                                    |
+| ANALOG    | trigger by temi internal flow, like dynamic mode auto-listening, continuous conversation etc. |
+| UNKNOWN   | unknown origin under current SDK version                                                      |
 
 
 <br>
 
-## Override original voice flow <a name="overrideVoiceFlow" />
+## Override original voice flow
 
-### Override the NLP <a name="overrideNlu" />
+### Override the NLP
 
 #### Steps
 
@@ -1228,7 +1228,7 @@ Selected Kiosk
 
 ---
 
-### Override the ASR <a name="overrideAsr" />
+### Override the ASR
 
 #### Steps
 
@@ -1255,7 +1255,7 @@ Selected Kiosk
 
 ---
 
-### Override the Conversation layer <a name="overrideConversationLayer" />
+### Override the Conversation layer
 
 #### Steps
 
@@ -1282,7 +1282,7 @@ Selected Kiosk
 
 ---
 
-### Override the TTS <a name="overrideTts" />
+### Override the TTS
 
 #### Steps
 

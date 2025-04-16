@@ -14,62 +14,49 @@ For more information on the detection and interaction state machines see below t
 
 **Note: There's a [Welcoming Mode app](https://github.com/ROBOTEAM-HOME/temi-welcomingmode-b2b) already developed that would satisfy most B2B needs, and can provide a good reference for anyone who like to develop an app using the Detection Mode abilities.**
 
-<br>
-
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|boolean|[isDetectionModeOn()](#isDetectionModeOn)|Check if Detection Mode is on|
-|void|[setDetectionModeOn(boolean on)](#setDetectionModeOn)|Turn on(off) Detection Mode|
-|void|[setDetectionModeOn(boolean on, float distance)](#setDetectionModeOnWithDistance)|Turn on Detection Mode with the maximum dection distance|
-|boolean|[isTrackUserOn](#isTrackUserOn)|Check if Track User is on|
-|void|[setTrackUserOn(boolean isOn)](#setTrackUserOn)|Turn on(off) Track User|
+| Return  | Method                                                                            | Description                                              |
+|---------|-----------------------------------------------------------------------------------|----------------------------------------------------------|
+| boolean | [isDetectionModeOn()](#isDetectionModeOn)                                         | Check if Detection Mode is on                            |
+| void    | [setDetectionModeOn(boolean on)](#setDetectionModeOn)                             | Turn on(off) Detection Mode                              |
+| void    | [setDetectionModeOn(boolean on, float distance)](#setDetectionModeOnWithDistance) | Turn on Detection Mode with the maximum dection distance |
+| boolean | [isTrackUserOn](#isTrackUserOn)                                                   | Check if Track User is on                                |
+| void    | [setTrackUserOn(boolean isOn)](#setTrackUserOn)                                   | Turn on(off) Track User                                  |
 
-|Interface|Description|
-|-|-|
-|[OnDetectionStateChangedListener](#onDetectionStateChangedListener)|Detection Mode state changed listener|
-|[OnUserInteractionChangedListener](#onUserInteractionChangedListener)|User interaction state changed listener|
-|[OnDetectionDataChangedListener](#onDetectionDataChangedListener)|Detection Mode data changed listener|
+| Interface                                                             | Description                             |
+|-----------------------------------------------------------------------|-----------------------------------------|
+| [OnDetectionStateChangedListener](#onDetectionStateChangedListener)   | Detection Mode state changed listener   |
+| [OnUserInteractionChangedListener](#onUserInteractionChangedListener) | User interaction state changed listener |
+| [OnDetectionDataChangedListener](#onDetectionDataChangedListener)     | Detection Mode data changed listener    |
 
-|Model|Description|
-|-|-|
-|[DetectionData](#detectionData)|Detection data in Detection Mode|
-
-<br>
+| Model                           | Description                      |
+|---------------------------------|----------------------------------|
+| [DetectionData](#detectionData) | Detection data in Detection Mode |
 
 ## Integration
 
 To configure the skill can use Detection Mode you must take the following steps:
 
 1. The skill should be a [Kiosk Mode](https://github.com/robotemi/sdk/wiki/Kiosk-Mode) skill first. Please learn how to configure skill into a [Kiosk Mode](https://github.com/robotemi/sdk/wiki/Kiosk-Mode) from [here](https://github.com/robotemi/sdk/wiki/Kiosk-Mode).
-
-2. Return temi and go to *Settings > General Settings > Turn on the Tracking User*.
-
+2. Return temi and go to _Settings > General Settings > Turn on the Tracking User_.
 3. Return to home page.
-
 4. Compile and run your skill.
-
-<br>
 
 ## Update
 
 - ### Version 126(Launcher version is 15567)
-
   **[Turning of Detection Mode](#setDetectionModeOn) will be invalid if [Track User(welcome mode)](#setTrackUserOn) is turned on.**
-
-- ### 0.10.77 Update the relationship between Detection Mode and Track User <a name="detectionModeAndTrackUser" />
+- ### 0.10.77 Update the relationship between Detection Mode and Track User
 
   [Turning on Detection Mode](#setDetectionModeOn) will not affect [Track User(welcome mode)](#setTrackUserOn), ~~but turning off Detection Mode will turning off Track User~~. Turning on(off) Track User will turning on(off) Detection Mode.
 
-  |Operation \ Effect|Detection Mode|Track User|
-  |-|-|-|
-  |Turning on Detection Mode|ON|-|
-  |Turning off Detection Mode|OFF|~~OFF~~|
-  |Turning on Track User|ON|ON|
-  |Turning off Track User|OFF|OFF|
-
-<br>
+  | Operation \ Effect         | Detection Mode | Track User |
+    |----------------------------|----------------|------------|
+  | Turning on Detection Mode  | ON             | -          |
+  | Turning off Detection Mode | OFF            | ~~OFF~~    |
+  | Turning on Track User      | ON             | ON         |
+  | Turning off Track User     | OFF            | OFF        |
 
 ## Methods
 
@@ -78,23 +65,16 @@ To configure the skill can use Detection Mode you must take the following steps:
 Check if Detection Mode is on. Off is as the default.
 
 - **Return**
-
   |Type|Description|
   |-|-|
   |boolean|ture(false) means Detection Mode is on(off)|
-
 - **Prototype**
-
-  ``` java
+  ```java
   boolean isDetectionModeOn();
   ```
-
 - **Required permissions**
-
   None.
-
 - **Support from**
-
   0.10.70
 
 ---
@@ -104,33 +84,25 @@ Check if Detection Mode is on. Off is as the default.
 Use this method to turn on (off) the Detection Mode. If use this method to turn on the Detection Mode, the maximum detection distance would be the default( **0.8** meters). **This method will not work if in Greet Mode**.
 
 - **Parameters**
-
   |Parameter|Type|Description|
   |-|-|-|
   |on|boolean|`true`(`false`) to turn on(off) the Detection Mode|
-
 - **Prototype**
-
-  ``` java
+  ```java
   void setDectionModeOn(boolean on);
   ```
-
 - **Required permissions**
-
   Selected Kiosk (Before 129 version), Settings
-
 - **Support from**
-
   0.10.70
 
 ---
 
-### setDetectionModeOn() <a name="setDetectionModeOnWithDistance" />
+### setDetectionModeOn()
 
 Use this method to turn on(off) the Detection Mode. If you use this method to turn on the Detection Mode, you can set its maximum detection distance at the same time. **This method will not work if in Greet Mode**.
 
 - **Parameters**
-
   |Parameter|Type|Description|
   |-|-|-|
   |on|boolean|`true`(`false`) to turn on(off) the Detection Mode|
@@ -138,7 +110,7 @@ Use this method to turn on(off) the Detection Mode. If you use this method to tu
 
 - **Prototype**
 
-  ``` java
+  ```java
   void setDectionModeOn(boolean on, float distance);
   ```
 
@@ -158,13 +130,13 @@ Check if Track User is on. Off is as the default.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|ture(false) means Track User is on(off)|
+  | Type    | Description                             |
+    |---------|-----------------------------------------|
+  | boolean | ture(false) means Track User is on(off) |
 
 - **Prototype**
 
-  ``` java
+  ```java
   boolean isTrackUserOn();
   ```
 
@@ -184,13 +156,13 @@ Use this method to turn on (off) the Track User. Track User means that after tra
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |on|boolean|`true`(`false`) to turn on(off) the Track User|
+  | Parameter | Type    | Description                                    |
+    |-----------|---------|------------------------------------------------|
+  | on        | boolean | `true`(`false`) to turn on(off) the Track User |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void setTrackUserOn(boolean on);
   ```
 
@@ -202,8 +174,6 @@ Use this method to turn on (off) the Track User. Track User means that after tra
 
   0.10.70
 
-<br>
-
 ## Interfaces
 
 ### OnDetectionStateChangedListener
@@ -212,7 +182,7 @@ Set your context to implement this listener and add the override method to get t
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.listeners;
 
 interface OnDetectionStateChangedListener {}
@@ -220,23 +190,23 @@ interface OnDetectionStateChangedListener {}
 
 #### Static constants
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|DETECTED <a name="detected" />|int|2|When a human body is detected|
-|LOST <a name="lost" />|int|1|Target detected lost|
-|IDLE <a name="idle" />|int|0|No active detection occurring and 4 seconds have passed since last detection was lost|
+| Constant | Type | Value | Description                                                                           |
+|----------|------|-------|---------------------------------------------------------------------------------------|
+| DETECTED | int  | 2     | When a human body is detected                                                         |
+| LOST     | int  | 1     | Target detected lost                                                                  |
+| IDLE     | int  | 0     | No active detection occurring and 4 seconds have passed since last detection was lost |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |state|int|Detection Mode state, possible states are [`DETECTED`](#detected), [`LOST`](#lost), [`IDLE`](#idle)|
+  | Parameter | Type | Description                                                                                         |
+    |-----------|------|-----------------------------------------------------------------------------------------------------|
+  | state     | int  | Detection Mode state, possible states are [`DETECTED`](#detected), [`LOST`](#lost), [`IDLE`](#idle) |
 
 - **Prototype**
 
-  ``` java
+  ```java
   abstract void onDetectionStateChanged(int state);
   ```
 
@@ -244,13 +214,13 @@ interface OnDetectionStateChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDetectionStateChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                            | Description                                           |
+    |-----------|---------------------------------|-------------------------------------------------------|
+  | listener  | OnDetectionStateChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void addOnDetectionStateChangedListener(OnDetectionStateChangedListener listener)
   ```
 
@@ -258,13 +228,13 @@ interface OnDetectionStateChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDetectionStateChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                            | Description                                           |
+    |-----------|---------------------------------|-------------------------------------------------------|
+  | listener  | OnDetectionStateChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void removeOnDetectionStateChangedListener(OnDetectionStateChangedListener listener)
   ```
 
@@ -284,7 +254,7 @@ Set your context to implement this listener and add the override method to get t
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.listeners;
 
 interface OnUserInteractionChangedListener {}
@@ -294,13 +264,13 @@ interface OnUserInteractionChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |isInteracting|boolean|`true`(`false`) means that user is(is not) interacting|
+  | Parameter     | Type    | Description                                            |
+    |---------------|---------|--------------------------------------------------------|
+  | isInteracting | boolean | `true`(`false`) means that user is(is not) interacting |
 
 - **Prototype**
 
-  ``` java
+  ```java
   abstract void onUserInteraction(boolean isInteracting);
   ```
 
@@ -308,13 +278,13 @@ interface OnUserInteractionChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnUserInteractionChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                             | Description                                           |
+    |-----------|----------------------------------|-------------------------------------------------------|
+  | listener  | OnUserInteractionChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void addOnUserInteractionChangedListener(OnUserInteractionChangedListener listener)
   ```
 
@@ -322,13 +292,13 @@ interface OnUserInteractionChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnUserInteractionChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                             | Description                                           |
+    |-----------|----------------------------------|-------------------------------------------------------|
+  | listener  | OnUserInteractionChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void removeOnUserInteractionChangedListener(OnUserInteractionChangedListener listener)
   ```
 
@@ -344,7 +314,7 @@ After the Detection Mode is turned on, data related to Detection Mode can be rec
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.listeners;
 
 interface OnDetectionDataChangedListener {}
@@ -354,13 +324,13 @@ interface OnDetectionDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |detectionData|[DetectionData](#detectionData)|Detected data|
+  | Parameter     | Type                            | Description   |
+    |---------------|---------------------------------|---------------|
+  | detectionData | [DetectionData](#detectionData) | Detected data |
 
 - **Prototype**
 
-  ``` java
+  ```java
   abstract void onDetectionDataChanged(DetectionData detectionData);
   ```
 
@@ -368,13 +338,13 @@ interface OnDetectionDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDetectionDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                           | Description                                           |
+    |-----------|--------------------------------|-------------------------------------------------------|
+  | listener  | OnDetectionDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void addOnDetectionDataChangedListener(OnDetectionDataChangedListener listener)
   ```
 
@@ -382,21 +352,19 @@ interface OnDetectionDataChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnDetectionDataChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                           | Description                                           |
+    |-----------|--------------------------------|-------------------------------------------------------|
+  | listener  | OnDetectionDataChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void removeOnDetectionDataChangedListener(OnDetectionDataChangedListener listener)
   ```
 
 #### Support from
 
 0.10.70
-
-<br>
 
 ## Models
 
@@ -408,7 +376,7 @@ Used for holding the data related Detection Mode.
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.model;
 
 class DetectionData {}
@@ -416,8 +384,8 @@ class DetectionData {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|angle|double|-|
-|distance|double|The distance from temi to the detected user|
-|isDetected|boolean|`true`(`false`) means temi did(did not) detect someone|
+| Attribute  | Type    | Description                                            |
+|------------|---------|--------------------------------------------------------|
+| angle      | double  | -                                                      |
+| distance   | double  | The distance from temi to the detected user            |
+| isDetected | boolean | `true`(`false`) means temi did(did not) detect someone |

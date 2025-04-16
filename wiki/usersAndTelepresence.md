@@ -2,43 +2,41 @@
 
 In this page we will outline all the SDK methods that are related to temi users and telepresence. temi users are people who have a temi account, this means they have downloaded the mobile app, registered and that now you can call them from temi.
 
-<br>
-
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|List<[UserInfo](#userinfo)>|[getAllContact()](#getallcontact)|Get all contacts of temi|
-|[UserInfo](#userinfo)|[getAdminInfo()](#getadmininfo)|Get administrator information of temi|
-|String|[startTelepresence(String displayName, String peerId, Platform platform)](#starttelepresence)|Start a telepresence|
-|int|[stopTelepresence()](#stoptelepresence)|Stop ongoing telepresence|
-|List<[RecentCallModel](#recentcallmodel)>|[getRecentCalls()](#getrecentcalls)|Get recent call records|
-|List<[MemberStatusModel](#memberstatusmodel)>|[getMembersStatus()](#getMembersStatus)|Get the availability of temi members(Administrator, Owners)|
-|Pair<Int, String>|[createLinkBasedMeeting(LinkBasedMeeting linkBasedMeeing)](#createlinkbasedmeeting)|Create a link based meeting|
-|String|[startMeeting(List<Participant> participants, boolean firstParticipantJoinedAsHost, boolean blockRobotInteraction)](#startmeeting)|Start a multiparty meeting|
-|int|[setMicGainLevel(int micGainLevel)](#setMicGainLevel)|Set microphone gain level|
+| Return                                          | Method                                                                                                                               | Description                                                 |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| List\<[UserInfo](#userinfo)\>                   | [getAllContact()](#getallcontact)                                                                                                    | Get all contacts of temi                                    |
+| [UserInfo](#userinfo)                           | [getAdminInfo()](#getadmininfo)                                                                                                      | Get administrator information of temi                       |
+| String                                          | [startTelepresence(String displayName, String peerId, Platform platform)](#starttelepresence)                                        | Start a telepresence                                        |
+| int                                             | [stopTelepresence()](#stoptelepresence)                                                                                              | Stop ongoing telepresence                                   |
+| List\<[RecentCallModel](#recentcallmodel)\>     | [getRecentCalls()](#getrecentcalls)                                                                                                  | Get recent call records                                     |
+| List\<[MemberStatusModel](#memberstatusmodel)\> | [getMembersStatus()](#getMembersStatus)                                                                                              | Get the availability of temi members(Administrator, Owners) |
+| Pair\<Int, String\>                             | [createLinkBasedMeeting(LinkBasedMeeting linkBasedMeeing)](#createlinkbasedmeeting)                                                  | Create a link based meeting                                 |
+| String                                          | [startMeeting(List\<Participant\> participants, boolean firstParticipantJoinedAsHost, boolean blockRobotInteraction)](#startmeeting) | Start a multiparty meeting                                  |
+| int                                             | [setMicGainLevel(int micGainLevel)](#setMicGainLevel)                                                                                | Set microphone gain level                                   |
 
-|Abstract Class|Description|
-|-|-|
-|[OnUsersUpdatedListener](#onusersupdatedlistener)|Listener of users information updated|
-|[OnTelepresenceStatusChangedListener](#ontelepresencestatuschangedlistener)|Listener of telepresence status changed|
+| Abstract Class                                                              | Description                             |
+|-----------------------------------------------------------------------------|-----------------------------------------|
+| [OnUsersUpdatedListener](#onusersupdatedlistener)                           | Listener of users information updated   |
+| [OnTelepresenceStatusChangedListener](#ontelepresencestatuschangedlistener) | Listener of telepresence status changed |
 
-|Interface|Description|
-|-|-|
-|[OnTelepresenceEventChangedListener](#ontelepresenceeventchangedlistener)|Listener of telepresence event changed|
+| Interface                                                                 | Description                            |
+|---------------------------------------------------------------------------|----------------------------------------|
+| [OnTelepresenceEventChangedListener](#ontelepresenceeventchangedlistener) | Listener of telepresence event changed |
 
-|Model|Description|
-|-|-|
-|[UserInfo](#userinfo)|User information|
-|[RecentCallModel](#recentcallmodel)|Recent call record|
-|[CallState](#callState)|Call state|
-|[CallEventModel](#callEventModel)|Call video|
-|[Platform](#platform)|User platform|
-|[MemberStatusModel](#memberstatusmodel)|Availability of temi members(Administrator, Owners)|
-|[LinkBasedMeeting](#linkbasedmeeting)|Link based meeting entity|
-|[Participant](#participant)|Meeting participant entity|
+| Model                                   | Description                                         |
+|-----------------------------------------|-----------------------------------------------------|
+| [UserInfo](#userinfo)                   | User information                                    |
+| [RecentCallModel](#recentcallmodel)     | Recent call record                                  |
+| [CallState](#callState)                 | Call state                                          |
+| [CallEventModel](#callEventModel)       | Call video                                          |
+| [Platform](#platform)                   | User platform                                       |
+| [MemberStatusModel](#memberstatusmodel) | Availability of temi members(Administrator, Owners) |
+| [LinkBasedMeeting](#linkbasedmeeting)   | Link based meeting entity                           |
+| [Participant](#participant)             | Meeting participant entity                          |
 
-<br>
+<br/>
 
 ## Methods
 
@@ -48,14 +46,14 @@ Use this method to fetch all the temi contacts that are synced with the launcher
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List<[UserInfo](#userinfo)>|List of temi contacts' user information|
+  | Type                          | Description                             |
+  |-------------------------------|-----------------------------------------|
+  | List\<[UserInfo](#userinfo)\> | List of temi contacts' user information |
 
 - **Prototype**
 
   ``` java
-  List<UserInfo> getAllContact();
+  List\<UserInfo\> getAllContact();
   ```
 
 - **Required permissions**
@@ -74,9 +72,9 @@ Use this method to fetech temi's admin user information, this information can be
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |[UserInfo](#userinfo)|User information of administrator|
+  | Type                  | Description                       |
+  |-----------------------|-----------------------------------|
+  | [UserInfo](#userinfo) | User information of administrator |
 
 - **Prototype**
 
@@ -100,17 +98,17 @@ Use this method to initiate a telepresence session using the temi telepresence s
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |displayName|String|~~String value of the name of the person you want to call~~|
-  |peerId|String|String value of the id of the person you want to call|
-  |platform|[Platform](#platform)|The target platform you want to make a video call. You can make a video call to the temi App of any contact, but you can only make a video call to the administrator or the owner’s temi center|
+  | Parameter   | Type                  | Description                                                                                                                                                                                     |
+  |-------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | displayName | String                | ~~String value of the name of the person you want to call~~                                                                                                                                     |
+  | peerId      | String                | String value of the id of the person you want to call                                                                                                                                           |
+  | platform    | [Platform](#platform) | The target platform you want to make a video call. You can make a video call to the temi App of any contact, but you can only make a video call to the administrator or the owner’s temi center |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|-|
+  | Type   | Description |
+  |--------|-------------|
+  | String | -           |
 
 - **Prototype**
 
@@ -138,9 +136,9 @@ Use this method to stop ongoing telepresence session.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|200 OK<br>400 failed to verify package name<br>403 meeting permission required<br>404 No onging telepresence<br>500 SDK internal error|
+  | Type | Description                                                                                                                                |
+  |------|--------------------------------------------------------------------------------------------------------------------------------------------|
+  | int  | 200 OK<br/>400 failed to verify package name<br/>403 meeting permission required<br/>404 No onging telepresence<br/>500 SDK internal error |
 
 - **Prototype**
 
@@ -164,14 +162,14 @@ Using this method to get the recent call records.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List<[RecentCallModel](#recentcallmodel)>|List of recent call records|
+  | Type                                        | Description                 |
+  |---------------------------------------------|-----------------------------|
+  | List\<[RecentCallModel](#recentcallmodel)\> | List of recent call records |
 
 - **Prototype**
 
   ``` java
-  List<RecentCallModel> getRecentCalls();
+  List\<RecentCallModel\> getRecentCalls();
   ```
 
 - **Required permissions**
@@ -190,14 +188,14 @@ Using this method to get the availability of temi members(Administrator, Owners)
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List<[MemberStatusModel](#memberStatusModel)>|List of temi members' availability status|
+  | Type                                            | Description                               |
+  |-------------------------------------------------|-------------------------------------------|
+  | List\<[MemberStatusModel](#memberStatusModel)\> | List of temi members' availability status |
 
 - **Prototype**
 
   ``` java
-  List<MemberStatusModel> getMembersStatus();
+  List\<MemberStatusModel\> getMembersStatus();
   ```
 
 - **Required permissions**
@@ -216,14 +214,14 @@ Using this method to create a link based meeting for current robot on behalf of 
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |Pair<int, String>|response code and meeting link or error reason.<br> 200 OK, with meeting link like `https://center.robotemi.com/meetings/{linkId}`<br> 403, Meetings permission required.<br>429, request too frequently, shall be 5 seconds interval|
+  | Type                | Description                                                                                                                                                                                                                              |
+  |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | Pair\<int, String\> | response code and meeting link or error reason.<br/> 200 OK, with meeting link like `https://center.robotemi.com/meetings/{linkId}`<br/> 403, Meetings permission required.<br/>429, request too frequently, shall be 5 seconds interval |
 
 - **Prototype**
 
   ``` java
-  Pair<int, String> createLinkBasedMeeting(LinkBasedMeeting linkbasedMeeting);
+  Pair\<int, String\> createLinkBasedMeeting(LinkBasedMeeting linkbasedMeeting);
   ```
 
 - **Required permissions**
@@ -242,23 +240,23 @@ Start a multiparty meeting with robot's private meeting link, particiants in the
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |participants|List<Participant>|Participants to be invited|
-  |firstParticipantJoinedAsHost|Boolean|Set to true, then first participant joined will be assigned as host. Otherwise launcher will be the host|
-  |blockRobotInteraction|Boolean|Disable some launcher buttons in the call. Prevent user to interrupt the call, added in 132 version|
+  | Parameter                    | Type                | Description                                                                                              |
+  |------------------------------|---------------------|----------------------------------------------------------------------------------------------------------|
+  | participants                 | List\<Participant\> | Participants to be invited                                                                               |
+  | firstParticipantJoinedAsHost | Boolean             | Set to true, then first participant joined will be assigned as host. Otherwise launcher will be the host |
+  | blockRobotInteraction        | Boolean             | Disable some launcher buttons in the call. Prevent user to interrupt the call, added in 132 version      |
 
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |String|response code<br> 200 OK<br> 403, Meetings permission required|
+  | Type   | Description                                                      |
+  |--------|------------------------------------------------------------------|
+  | String | response code<br/> 200 OK<br/> 403, Meetings permission required |
 
 - **Prototype**
 
   ``` java
-  String startMeeting(List<Participant> participants, boolean firstParticipantJoinedAsHost, boolean blockRobotInteraction);
+  String startMeeting(List\<Participant\> participants, boolean firstParticipantJoinedAsHost, boolean blockRobotInteraction);
   ```
 
 - **Required permissions**
@@ -276,15 +274,15 @@ Set microphone gain level in temi meetings.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |micGainLevel|int|Value from 1-4|
+  | Parameter    | Type | Description    |
+  |--------------|------|----------------|
+  | micGainLevel | int  | Value from 1-4 |
 
 - **Prototype**
 
-  |Type|Description|
-  |-|-|
-  |int|response code<br> 0 failed<br> 1 succeed<br> 403, SETTINGS permission required<br> 429, too many request, wait for 2 seconds|
+  | Type | Description                                                                                                                      |
+  |------|----------------------------------------------------------------------------------------------------------------------------------|
+  | int  | response code<br/> 0 failed<br/> 1 succeed<br/> 403, SETTINGS permission required<br/> 429, too many request, wait for 2 seconds |
 
 - **Prototype**
 
@@ -300,7 +298,7 @@ Set microphone gain level in temi meetings.
 
   1.133.0
 
-<br>
+<br/>
 
 ## Abstract Classes
 
@@ -318,17 +316,17 @@ abstract class OnUsersUpdatedListener {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|userIds|List\<String\>|List of temi contacts' ID|
+| Attribute | Type             | Description               |
+|-----------|------------------|---------------------------|
+| userIds   | List\\<String\\> | List of temi contacts' ID |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |user|[UserInfo](#userinfo)|The user information that has been changed|
+  | Parameter | Type                  | Description                                |
+  |-----------|-----------------------|--------------------------------------------|
+  | user      | [UserInfo](#userinfo) | The user information that has been changed |
 
 - **Prototype**
 
@@ -340,9 +338,9 @@ abstract class OnUsersUpdatedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnUsersUpdatedListener|The object of the child class of this class|
+  | Parameter | Type                   | Description                                 |
+  |-----------|------------------------|---------------------------------------------|
+  | listener  | OnUsersUpdatedListener | The object of the child class of this class |
 
 - **Prototype**
 
@@ -354,9 +352,9 @@ abstract class OnUsersUpdatedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnUsersUpdatedListener|The object of the child class of this class|
+  | Parameter | Type                   | Description                                 |
+  |-----------|------------------------|---------------------------------------------|
+  | listener  | OnUsersUpdatedListener | The object of the child class of this class |
 
 - **Prototype**
 
@@ -383,17 +381,17 @@ abstract class OnTelepresenceStatusChangedListener {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|sessionId|String|~~Session ID~~|
+| Attribute | Type   | Description    |
+|-----------|--------|----------------|
+| sessionId | String | ~~Session ID~~ |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |callState|[CallState](#callState)|State of the call|
+  | Parameter | Type                    | Description       |
+  |-----------|-------------------------|-------------------|
+  | callState | [CallState](#callState) | State of the call |
 
 - **Prototype**
 
@@ -405,9 +403,9 @@ void onTelepresenceStatusChanged(CallState callState);
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTelepresenceStatusChangedListener|The object of the child class of this class|
+  | Parameter | Type                                | Description                                 |
+  |-----------|-------------------------------------|---------------------------------------------|
+  | listener  | OnTelepresenceStatusChangedListener | The object of the child class of this class |
 
 - **Prototype**
 
@@ -419,9 +417,9 @@ void onTelepresenceStatusChanged(CallState callState);
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTelepresenceStatusChangedListener|The object of the child class of this class|
+  | Parameter | Type                                | Description                                 |
+  |-----------|-------------------------------------|---------------------------------------------|
+  | listener  | OnTelepresenceStatusChangedListener | The object of the child class of this class |
 
 - **Prototype**
 
@@ -429,7 +427,7 @@ void onTelepresenceStatusChanged(CallState callState);
   void removeOnTelepresenceStatusChangedListener(OnTelepresenceStatusChangedListener listener);
   ```
 
-<br>
+<br/>
 
 ## Interfaces
 
@@ -449,9 +447,9 @@ interface OnTelepresenceEventChangedListener {}
 
 - **Parameters**
 
-  |Parameters|Type|Description|
-  |-|-|-|
-  |callEventModel|[CallEventModel](#calleventmodel)|Call event|
+  | Parameters     | Type                              | Description |
+  |----------------|-----------------------------------|-------------|
+  | callEventModel | [CallEventModel](#calleventmodel) | Call event  |
 
 - **Prototype**
 
@@ -463,9 +461,9 @@ interface OnTelepresenceEventChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTelepresenceEventChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                               | Description                                                |
+  |-----------|------------------------------------|------------------------------------------------------------|
+  | listener  | OnTelepresenceEventChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -477,9 +475,9 @@ interface OnTelepresenceEventChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnTelepresenceEventChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                               | Description                                                |
+  |-----------|------------------------------------|------------------------------------------------------------|
+  | listener  | OnTelepresenceEventChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
@@ -487,7 +485,7 @@ interface OnTelepresenceEventChangedListener {}
   void removeOnTelepresenceEventChangedListener(OnTelepresenceEventChangedListener listener);
   ```
 
-<br>
+<br/>
 
 ## Models
 
@@ -505,12 +503,12 @@ class UserInfo {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|userId|String|ID of user|
-|name|String|Name of user|
-|picUrl|String|Avatar picture URL of user|
-|role|int|Role of user, 0 means administrator, 1 means owner, 2 means contact. <br>From 1.129.1 version, 0 means administrators of robot, 1 means collaborators, 2 means guest, 3 means contacts assigned to this robot, who are temi registered user, and can be called. 10 means contacts assigned to this robot, but only used for face recognition, cannot be called with [UserInfo.userId]|
+| Attribute | Type   | Description                                                                                                                                                                                                                                                                                                                                                                            |
+|-----------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| userId    | String | ID of user                                                                                                                                                                                                                                                                                                                                                                             |
+| name      | String | Name of user                                                                                                                                                                                                                                                                                                                                                                           |
+| picUrl    | String | Avatar picture URL of user                                                                                                                                                                                                                                                                                                                                                             |
+| role      | int    | Role of user, 0 means administrator, 1 means owner, 2 means contact. <br/>From 1.129.1 version, 0 means administrators of robot, 1 means collaborators, 2 means guest, 3 means contacts assigned to this robot, who are temi registered user, and can be called. 10 means contacts assigned to this robot, but only used for face recognition, cannot be called with [UserInfo.userId] |
 
 ---
 
@@ -528,11 +526,11 @@ class CallState {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|sessionId|String|~~Unique id for the telepresence call~~|
-|state|[State](#state)|Call state|
-|lowLightMode|Boolean|Low light mode ON/OFF (supported from 130 version)|
+| Attribute    | Type            | Description                                        |
+|--------------|-----------------|----------------------------------------------------|
+| sessionId    | String          | ~~Unique id for the telepresence call~~            |
+| state        | [State](#state) | Call state                                         |
+| lowLightMode | Boolean         | Low light mode ON/OFF (supported from 130 version) |
 
 ---
 
@@ -574,20 +572,20 @@ class CallEventModel {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|sessionId|String|~~Unique id for the telepresence call~~|
-|type|int|Type of the call, incoming(0) or outgoing(1)|
-|state|int|State of the call, started(0) or ended(1)|
+| Attribute | Type   | Description                                  |
+|-----------|--------|----------------------------------------------|
+| sessionId | String | ~~Unique id for the telepresence call~~      |
+| type      | int    | Type of the call, incoming(0) or outgoing(1) |
+| state     | int    | State of the call, started(0) or ended(1)    |
 
 #### Static constants
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|TYPE_INCOMING|int|0|Incoming call|
-|TYPE_OUTGOING|int|1|Outgoing call|
-|STATE_STARTED|int|0|Call started|
-|STATE_ENDED|int|1|Call ended|
+| Constant      | Type | Value | Description   |
+|---------------|------|-------|---------------|
+| TYPE_INCOMING | int  | 0     | Incoming call |
+| TYPE_OUTGOING | int  | 1     | Outgoing call |
+| STATE_STARTED | int  | 0     | Call started  |
+| STATE_ENDED   | int  | 1     | Call ended    |
 
 ---
 
@@ -620,19 +618,19 @@ class MemberStatusModel {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|memberId|String|ID of temi member|
-|mobileStatus|int|Availability status of member in temi mobile App|
-|centerStatus|int|Availability status of member in temi Center|
+| Attribute    | Type   | Description                                      |
+|--------------|--------|--------------------------------------------------|
+| memberId     | String | ID of temi member                                |
+| mobileStatus | int    | Availability status of member in temi mobile App |
+| centerStatus | int    | Availability status of member in temi Center     |
 
 #### Static constants
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|STATUS_ONLINE|int|0|Online and available|
-|STATUS_OFFLINE|int|1|Offline|
-|STATUS_BUSY|int|2|Busy|
+| Constant       | Type | Value | Description          |
+|----------------|------|-------|----------------------|
+| STATUS_ONLINE  | int  | 0     | Online and available |
+| STATUS_OFFLINE | int  | 1     | Offline              |
+| STATUS_BUSY    | int  | 2     | Busy                 |
 
 ---
 
@@ -650,13 +648,13 @@ class LinkBasedMeeting {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|topic|String|Topic for the meeting|
-|availability|Availability|Link availablity time range. Define start/end time of the link, or always available|
-|limit|Limit|Call duration limitation, and usage time limitation|
-|permission|Permission|Define the link users' permission to control the robot, or create notes.|
-|security|Security|Set passcode for the meeting|
+| Attribute    | Type         | Description                                                                         |
+|--------------|--------------|-------------------------------------------------------------------------------------|
+| topic        | String       | Topic for the meeting                                                               |
+| availability | Availability | Link availablity time range. Define start/end time of the link, or always available |
+| limit        | Limit        | Call duration limitation, and usage time limitation                                 |
+| permission   | Permission   | Define the link users' permission to control the robot, or create notes.            |
+| security     | Security     | Set passcode for the meeting                                                        |
 
 ---
 
@@ -674,7 +672,7 @@ class Participant {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|peerId|String|Participant ID, same as peerId in `startTelepresence`|
-|platform|Platform|Platform.MOBILE， Platform.TEMI_CENTER|
+| Attribute | Type     | Description                                           |
+|-----------|----------|-------------------------------------------------------|
+| peerId    | String   | Participant ID, same as peerId in `startTelepresence` |
+| platform  | Platform | Platform.MOBILE， Platform.TEMI_CENTER                 |

@@ -5,18 +5,18 @@ Kiosk mode is a configuration of your temi skill that allows it to take over the
 In the temi Settings -> Home Screen -> Application, you can set any app as home screen application.
 But only the app who declares to be kiosk app in the manifest and actually selected as home screen app can be granted with special permissions, including overriding voice flow, restart the system, etc.
 
-<br>
+<br/>
 
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|void|[requestToBeKioskApp()](#requestToBeKioskApp)|Request to be the currently selected Kiosk skill|
-|boolean|[isSelectedKioskApp()](#isSelectedKioskApp)|Check whether the skill is the currently selected Kiosk skill|
-|void|[setKioskModeOn(boolean on, HomeScreenMode mode)](#setKioskModeOn)|Turn on(off) Kiosk mdoe|
-|boolean|[isKioskModeOn](#isKioskModeOn)|Check is Kiosk mode on|
+| Return  | Method                                                             | Description                                                   |
+|---------|--------------------------------------------------------------------|---------------------------------------------------------------|
+| void    | [requestToBeKioskApp()](#requestToBeKioskApp)                      | Request to be the currently selected Kiosk skill              |
+| boolean | [isSelectedKioskApp()](#isSelectedKioskApp)                        | Check whether the skill is the currently selected Kiosk skill |
+| void    | [setKioskModeOn(boolean on, HomeScreenMode mode)](#setKioskModeOn) | Turn on(off) Kiosk mdoe                                       |
+| boolean | [isKioskModeOn](#isKioskModeOn)                                    | Check is Kiosk mode on                                        |
 
-<br>
+<br/>
 
 ## Integration
 
@@ -45,7 +45,7 @@ To configure the skill as a kiosk skill you must take the following steps:
 
 6. Select your skill from the list of skills available for kiosk mode configuration. In the case where there is only one of those, it will automatically be selected for you when the mode is turned on.
 
-<br>
+<br/>
 
 ## Methods
 
@@ -75,9 +75,9 @@ Check wheather your skill is the currently selected Kiosk skill.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means your skill is(is not) currently selected Kiosk skill|
+  | Type    | Description                                                            |
+  |---------|------------------------------------------------------------------------|
+  | boolean | true(false) means your skill is(is not) currently selected Kiosk skill |
 
 - **Prototype**
 
@@ -101,10 +101,10 @@ Use this method to enable or disable kiosk mode. You can also enable or disable 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |on|boolean|true(false) to enable(disable) kiosk mode|
-  |mode|HomeScreenMode|Add in 134 version, when turn off kiosk mode, can assisgn a mode to return to|
+  | Parameter | Type           | Description                                                                   |
+  |-----------|----------------|-------------------------------------------------------------------------------|
+  | on        | boolean        | true(false) to enable(disable) kiosk mode                                     |
+  | mode      | HomeScreenMode | Add in 134 version, when turn off kiosk mode, can assisgn a mode to return to |
 
 - **Prototype**
 
@@ -128,9 +128,9 @@ Check if kiosk mode is eanbled.
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |boolean|true(false) means kiosk mode is enabled(disabled)|
+  | Type    | Description                                       |
+  |---------|---------------------------------------------------|
+  | boolean | true(false) means kiosk mode is enabled(disabled) |
 
 - **Prototype**
 

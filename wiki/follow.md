@@ -1,23 +1,22 @@
-
 # Follow
 
 Be With Me AKA Follow Mode tells temi to search for a person that is standing next to it, lock on and then follow it's movement. Generally, a user would click on temi's top hard button or verbally ask temi to follow them, however, with the SDK you can trigger this feature programatically. temi also has the option to constraint follow, in this case temi tracks only on its axis using turn and tilt but with no movement.
 
-<br>
+<br/>
 
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|void|[beWithMe()](#beWithMe)|Iitiate follow mode|
-|void|[constraintBeWith()](#constraintBeWith)|Iitiate constraint follow mode|
+| Return | Method                                  | Description                    |
+|--------|-----------------------------------------|--------------------------------|
+| void   | [beWithMe()](#beWithMe)                 | Iitiate follow mode            |
+| void   | [constraintBeWith()](#constraintBeWith) | Iitiate constraint follow mode |
 
-|Interface|Description|
-|-|-|
-|[OnBeWithMeStatusChangedListener](#onBeWithMeStatusChangedListener)|Listener for follow mode status|
-|[OnConstraintBeWithStatusChangedListener](#onConstraintBeWithStatusChangedListener)|Listener for constraint follow mode status|
+| Interface                                                                           | Description                                |
+|-------------------------------------------------------------------------------------|--------------------------------------------|
+| [OnBeWithMeStatusChangedListener](#onBeWithMeStatusChangedListener)                 | Listener for follow mode status            |
+| [OnConstraintBeWithStatusChangedListener](#onConstraintBeWithStatusChangedListener) | Listener for constraint follow mode status |
 
-<br>
+<br/>
 
 ## Methods
 
@@ -29,13 +28,13 @@ From 1.135.1, this method can take SpeedLevel as parameter to control follow spe
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |speedLevel|SpeedLevel|control the follow speed, set `null` to use system settings, added in 1.135.1 SDK, supported by 135 Launcher|
+  | Parameter  | Type       | Description                                                                                                  |
+    |------------|------------|--------------------------------------------------------------------------------------------------------------|
+  | speedLevel | SpeedLevel | control the follow speed, set `null` to use system settings, added in 1.135.1 SDK, supported by 135 Launcher |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void beWithMe(SpeedLevel speedLevel);
   ```
 
@@ -55,7 +54,7 @@ Use this method to manually invoke the constraint follow mode. Constraint Follow
 
 - **Prototype**
 
-  ``` java
+  ```java
   void constraintBeWith();
   ```
 
@@ -67,7 +66,7 @@ Use this method to manually invoke the constraint follow mode. Constraint Follow
 
   0.10.53
 
-<br>
+<br/>
 
 ## Interfaces
 
@@ -77,36 +76,36 @@ Set your context to implement this listener and add the override method to get t
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.listeners;
 
 interface OnBeWithMeStatusChangedListener {}
 ```
 
-#### Static constants <a name="staticConstantOnBeWithMeStatus" />
+#### Static constants
 
 All constants here are only for the status of following.
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|ABORT|String|"abort"|When the user or temi aborts the follow action|
-|CALCULATING|String|"calculating"|When temi gets stuck following due to an obstacle and is trying to figure its' way around it|
-|SEARCH|String|"search"|Follow mode is triggered and temi is looking for a person to follow|
-|START|String|"start"|temi temi has found a person and following has began|
-|TRACK|String|"track"|temi is following|
-|OBSTACLE_DETECTED|String|"obstacle detected"|temi detected obstacles|
+| Constant          | Type   | Value               | Description                                                                                  |
+|-------------------|--------|---------------------|----------------------------------------------------------------------------------------------|
+| ABORT             | String | "abort"             | When the user or temi aborts the follow action                                               |
+| CALCULATING       | String | "calculating"       | When temi gets stuck following due to an obstacle and is trying to figure its' way around it |
+| SEARCH            | String | "search"            | Follow mode is triggered and temi is looking for a person to follow                          |
+| START             | String | "start"             | temi temi has found a person and following has began                                         |
+| TRACK             | String | "track"             | temi is following                                                                            |
+| OBSTACLE_DETECTED | String | "obstacle detected" | temi detected obstacles                                                                      |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameters|Type|Description|
-  |-|-|-|
-  |status|String|[Status](#staticConstantOnBeWithMeStatus) of following mode|
+  | Parameters | Type   | Description                                                 |
+    |------------|--------|-------------------------------------------------------------|
+  | status     | String | [Status](#staticConstantOnBeWithMeStatus) of following mode |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void onBeWithMeStatusChanged(String status);
   ```
 
@@ -114,13 +113,13 @@ All constants here are only for the status of following.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnBeWithMeStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                            | Description                                                |
+    |-----------|---------------------------------|------------------------------------------------------------|
+  | listener  | OnBeWithMeStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void addOnBeWithMeStatusChangedListener(OnBeWithMeStatusChangedListener listener);
   ```
 
@@ -128,13 +127,13 @@ All constants here are only for the status of following.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnBeWithMeStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                            | Description                                                |
+    |-----------|---------------------------------|------------------------------------------------------------|
+  | listener  | OnBeWithMeStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void removeOnBeWithMeStatusChangedListener(OnBeWithMeStatusChangedListener listener);
   ```
 
@@ -150,7 +149,7 @@ Set your context to implement this listener and add the override method to get t
 
 #### Prototype
 
-``` java
+```java
 package com.robotemi.sdk.listeners;
 
 interface OnConstraintBeWithStatusChangedListener {}
@@ -160,13 +159,13 @@ interface OnConstraintBeWithStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameters|Type|Description|
-  |-|-|-|
-  |isConstraint|boolean|In constraint follow mode or not|
+  | Parameters   | Type    | Description                      |
+    |--------------|---------|----------------------------------|
+  | isConstraint | boolean | In constraint follow mode or not |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void onConstraintBeWithStatusChanged(boolean isConstraint);
   ```
 
@@ -174,13 +173,13 @@ interface OnConstraintBeWithStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnConstraintBeWithStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                                    | Description                                                |
+    |-----------|-----------------------------------------|------------------------------------------------------------|
+  | listener  | OnConstraintBeWithStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void addOnConstraintBeWithStatusChangedListener(OnConstraintBeWithStatusChangedListener listener);
   ```
 
@@ -188,13 +187,13 @@ interface OnConstraintBeWithStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnConstraintBeWithStatusChangedListener|The object of the class implements this listener interface|
+  | Parameter | Type                                    | Description                                                |
+    |-----------|-----------------------------------------|------------------------------------------------------------|
+  | listener  | OnConstraintBeWithStatusChangedListener | The object of the class implements this listener interface |
 
 - **Prototype**
 
-  ``` java
+  ```java
   void removeOnConstraintBeWithStatusChangedListener(OnConstraintBeWithStatusChangedListener listener);
   ```
 

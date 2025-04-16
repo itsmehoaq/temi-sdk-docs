@@ -2,7 +2,6 @@
 
 The features here need to be configured in the [temi Center][center] before they can be used.
 
-
 ### Sequence 
 
 Sequence, is a powerful tool with easy block building interface to achieve chained functionality.
@@ -55,34 +54,34 @@ For more infos, please check this page [Local Face Registration](https://github.
 
 ## API Overview
 
-|Return|Method|Description|
-|-|-|-|
-|void|[startFaceRecognition()](#startfacerecognition)|Start face recognition|
-|void|[stopFaceRecognition()](#stopfacerecognition)|Stop face recognition|
-|List\<[SequenceModel](#sequencemodel)\>|[getAllSequences()](#getAllSequences)|Get all sequences|
-|void|[playSequence(String sequenceId)](#playsequence)|Play specific sequence by `sequenceId`|
-|void|[playSequence(String sequenceId, boolean withPlayer)](#playSequenceWithPlayer)|Play specific sequence by `sequenceId` and set wheather show the player panel when sequence is playing|
-|InputStream|[getInputStreamByMediaKey(ContentType contentType, String mediaKey)](#getinputstreambymediaKey)|Obtain the input stream of the file by `contentType` and `mediaKey` (currently only used to obtain the contact photo for face recognition)|
-|List<Pair<String, String>>|[getSignedUrlByMediaKey(List\<String\> mediaKeys, int width, int height)](#getsignedurlbymediakey)|Get the list of the pair for media key and signed URL by mediaKeys|
-|void|[controlSequence(SequenceCommand sequenceCommand)](#controlsequence)|Control the currently playing Sequence|
-|int|[setInteractionState(Boolean on)](#setinteractionstate)|Set interaction state as ON, to keep greet mode under interaction state.|
-|List\<[TourModel](#tourmodel)\>|[getAllTours()](#getAllTours)|Get the list of tours|
-|int|[playTour(String tourId)](#playTour)|Play a tour by id|
+| Return                                  | Method                                                                                             | Description                                                                                                                                |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| void                                    | [startFaceRecognition()](#startfacerecognition)                                                    | Start face recognition                                                                                                                     |
+| void                                    | [stopFaceRecognition()](#stopfacerecognition)                                                      | Stop face recognition                                                                                                                      |
+| List\<[SequenceModel](#sequencemodel)\> | [getAllSequences()](#getAllSequences)                                                              | Get all sequences                                                                                                                          |
+| void                                    | [playSequence(String sequenceId)](#playsequence)                                                   | Play specific sequence by `sequenceId`                                                                                                     |
+| void                                    | [playSequence(String sequenceId, boolean withPlayer)](#playSequenceWithPlayer)                     | Play specific sequence by `sequenceId` and set wheather show the player panel when sequence is playing                                     |
+| InputStream                             | [getInputStreamByMediaKey(ContentType contentType, String mediaKey)](#getinputstreambymediaKey)    | Obtain the input stream of the file by `contentType` and `mediaKey` (currently only used to obtain the contact photo for face recognition) |
+| List\<Pair\<String, String\>\>          | [getSignedUrlByMediaKey(List\<String\> mediaKeys, int width, int height)](#getsignedurlbymediakey) | Get the list of the pair for media key and signed URL by mediaKeys                                                                         |
+| void                                    | [controlSequence(SequenceCommand sequenceCommand)](#controlsequence)                               | Control the currently playing Sequence                                                                                                     |
+| int                                     | [setInteractionState(Boolean on)](#setinteractionstate)                                            | Set interaction state as ON, to keep greet mode under interaction state.                                                                   |
+| List\<[TourModel](#tourmodel)\>         | [getAllTours()](#getAllTours)                                                                      | Get the list of tours                                                                                                                      |
+| int                                     | [playTour(String tourId)](#playTour)                                                               | Play a tour by id                                                                                                                          |
 
-|Interface|Description|
-|-|-|
-|[OnSequencePlayStatusChangedListener](#onsequenceplaystatuschangedlistener)|Sequence status changed listener|
-|[OnFaceRecognizedListener](#onfacerecognizedlistener)|Face recognition listener|
-|[OnContinuousFaceRecognizedListener](#oncontinuousfacerecognizedlistener)|Continuous face recognition listener|
-|[OnGreetModeStateChangedListener](#ongreetmodestatechangedlistener)|Greet mode state changed listener|
+| Interface                                                                   | Description                          |
+|-----------------------------------------------------------------------------|--------------------------------------|
+| [OnSequencePlayStatusChangedListener](#onsequenceplaystatuschangedlistener) | Sequence status changed listener     |
+| [OnFaceRecognizedListener](#onfacerecognizedlistener)                       | Face recognition listener            |
+| [OnContinuousFaceRecognizedListener](#oncontinuousfacerecognizedlistener)   | Continuous face recognition listener |
+| [OnGreetModeStateChangedListener](#ongreetmodestatechangedlistener)         | Greet mode state changed listener    |
 
-|Models|Description|
-|-|-|
-|[ContactModel](#contactmodel)|Contact data|
-|[SequenceModel](#sequencemodel)|Sequence data|
-|[ContentType](#contenttype)|Content type|
-|[SequenceCommand](#sequencecommand)|Sequence control command|
-|[TourModel](#tourmodel)|Tour data|
+| Models                              | Description              |
+|-------------------------------------|--------------------------|
+| [ContactModel](#contactmodel)       | Contact data             |
+| [SequenceModel](#sequencemodel)     | Sequence data            |
+| [ContentType](#contenttype)         | Content type             |
+| [SequenceCommand](#sequencecommand) | Sequence control command |
+| [TourModel](#tourmodel)             | Tour data                |
 
 <br>
 
@@ -134,15 +133,15 @@ Use this method to get all the sequences under organization that configured on [
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |tags|List\<String\>|Sequence tags(configure at temi Center), optional parameter, return all the sequences if not passed in|
+  | Parameter | Type           | Description                                                                                            |
+  |-----------|----------------|--------------------------------------------------------------------------------------------------------|
+  | tags      | List\<String\> | Sequence tags(configure at temi Center), optional parameter, return all the sequences if not passed in |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List\<[SequenceModel](#sequenceModel)\>|All sequences list|
+  | Type                                    | Description        |
+  |-----------------------------------------|--------------------|
+  | List\<[SequenceModel](#sequenceModel)\> | All sequences list |
 
 - **Prototype**
 
@@ -170,9 +169,9 @@ Use this method to play a specific sequence.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sequenceId|String|ID of the sequence|
+  | Parameter  | Type   | Description        |
+  |------------|--------|--------------------|
+  | sequenceId | String | ID of the sequence |
 
 - **Prototype**
 
@@ -190,16 +189,16 @@ Use this method to play a specific sequence.
 
 ---
 
-### playSequence() <a name="playSequenceWithPlayer" />
+### playSequence()
 
 Use this method to play a specified sequence, and you can choose whether to display the sequence player control interface. The player control interface can pause, play, previous and next operations on the sequence.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sequenceId|String|ID of the sequence|
-  |withPlayer|boolean|Show player or no|
+  | Parameter  | Type    | Description        |
+  |------------|---------|--------------------|
+  | sequenceId | String  | ID of the sequence |
+  | withPlayer | boolean | Show player or no  |
 
 - **Prototype**
 
@@ -223,16 +222,16 @@ Use this method to obtain the input stream of the file by `mediaKey`, currently 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |contentType|[ContentType](#contentType)|Content type|
-  |mediaKey|String|Media key of the file|
+  | Parameter   | Type                        | Description           |
+  |-------------|-----------------------------|-----------------------|
+  | contentType | [ContentType](#contentType) | Content type          |
+  | mediaKey    | String                      | Media key of the file |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |InputStream|Input stream of the file|
+  | Type        | Description              |
+  |-------------|--------------------------|
+  | InputStream | Input stream of the file |
 
 - **Prototype**
 
@@ -260,17 +259,17 @@ Use this method to get signed URL by `mediaKeys` , `width` , `height`.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |mediaKeys|List\<String\>|List of media keys|
-  |width|int|The width of the image, will return the original resource if no parameter passed|
-  |height|int|The height of the image, will return the original resource if no parameter passed|
+  | Parameter | Type           | Description                                                                       |
+  |-----------|----------------|-----------------------------------------------------------------------------------|
+  | mediaKeys | List\<String\> | List of media keys                                                                |
+  | width     | int            | The width of the image, will return the original resource if no parameter passed  |
+  | height    | int            | The height of the image, will return the original resource if no parameter passed |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List<Pair<String, String>>|The list that holds the pair for media key and signed URL|
+  | Type                           | Description                                               |
+  |--------------------------------|-----------------------------------------------------------|
+  | List\<Pair\<String, String\>\> | The list that holds the pair for media key and signed URL |
 
 - **Prototype**
 
@@ -299,9 +298,9 @@ Use this method to control the currently playing Sequence, including stop, play,
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |sequenceCommand|[SequenceCommand](#sequenceCommand)|Control command|
+  | Parameter       | Type                                | Description     |
+  |-----------------|-------------------------------------|-----------------|
+  | sequenceCommand | [SequenceCommand](#sequenceCommand) | Control command |
 
 - **Prototype**
 
@@ -329,15 +328,15 @@ Since 130 version, home screen app can keep robot at interaction phase in greet 
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |on|Boolean|true to hold it as interaction state|
+  | Parameter | Type    | Description                          |
+  |-----------|---------|--------------------------------------|
+  | on        | Boolean | true to hold it as interaction state |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|-1 for failed to request, maybe robot is not ready<br>0 for request succeed<br>403 for current app is not selected Home screen app|
+  | Type | Description                                                                                                                        |
+  |------|------------------------------------------------------------------------------------------------------------------------------------|
+  | int  | -1 for failed to request, maybe robot is not ready<br>0 for request succeed<br>403 for current app is not selected Home screen app |
 
 - **Prototype**
 
@@ -361,15 +360,15 @@ Get the list of tours of this robot.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |tags|List\<String\>|Tour tags(configure at temi Center), optional parameter, return all the tours of this robot if not passed in|
+  | Parameter | Type           | Description                                                                                                  |
+  |-----------|----------------|--------------------------------------------------------------------------------------------------------------|
+  | tags      | List\<String\> | Tour tags(configure at temi Center), optional parameter, return all the tours of this robot if not passed in |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |List\<[TourModel](#tourmodel)\>|All tour list|
+  | Type                            | Description   |
+  |---------------------------------|---------------|
+  | List\<[TourModel](#tourmodel)\> | All tour list |
 
 - **Prototype**
 
@@ -397,15 +396,15 @@ Use this method to play a specific tour.
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |tourId|String|ID of the tour|
+  | Parameter | Type   | Description    |
+  |-----------|--------|----------------|
+  | tourId    | String | ID of the tour |
 
 - **Return**
 
-  |Type|Description|
-  |-|-|
-  |int|0 ok, 403 no permission, 404 no tour matched, -1 unsupport method|
+  | Type | Description                                                       |
+  |------|-------------------------------------------------------------------|
+  | int  | 0 ok, 403 no permission, 404 no tour matched, -1 unsupport method |
 
 - **Prototype**
 
@@ -441,9 +440,9 @@ interface OnFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |contactModelList|List\<[ContactModel](#contactModel)\>|Contact set corresponding to the recognized face|
+  | Parameter        | Type                                  | Description                                      |
+  |------------------|---------------------------------------|--------------------------------------------------|
+  | contactModelList | List\<[ContactModel](#contactModel)\> | Contact set corresponding to the recognized face |
 
 - **Prototype**
 
@@ -455,9 +454,9 @@ interface OnFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnFaceRecognizedListener|An instance of a class that implements this interface|
+  | Parameter | Type                     | Description                                           |
+  |-----------|--------------------------|-------------------------------------------------------|
+  | listener  | OnFaceRecognizedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -469,9 +468,9 @@ interface OnFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnFaceRecognizedListener|An instance of a class that implements this interface|
+  | Parameter | Type                     | Description                                           |
+  |-----------|--------------------------|-------------------------------------------------------|
+  | listener  | OnFaceRecognizedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -507,9 +506,9 @@ interface OnContinuousFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |contactModelList|List\<[ContactModel](#contactModel)\>|Contact set corresponding to the recognized face|
+  | Parameter        | Type                                  | Description                                      |
+  |------------------|---------------------------------------|--------------------------------------------------|
+  | contactModelList | List\<[ContactModel](#contactModel)\> | Contact set corresponding to the recognized face |
 
 - **Prototype**
 
@@ -521,9 +520,9 @@ interface OnContinuousFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnContinuousFaceRecognizedListener|An instance of a class that implements this interface|
+  | Parameter | Type                               | Description                                           |
+  |-----------|------------------------------------|-------------------------------------------------------|
+  | listener  | OnContinuousFaceRecognizedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -535,9 +534,9 @@ interface OnContinuousFaceRecognizedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnContinuousFaceRecognizedListener|An instance of a class that implements this interface|
+  | Parameter | Type                               | Description                                           |
+  |-----------|------------------------------------|-------------------------------------------------------|
+  | listener  | OnContinuousFaceRecognizedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -567,22 +566,22 @@ package com.robotemi.sdk.sequence;
 interface OnSequencePlayStatusChangedListener {}
 ```
 
-#### Static constant <a name="sequenceStatus" />
+#### Static constant
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|IDLE|int|0|Finish playing|
-|PREPARING|int|1|Source preparing|
-|PLAYING|int|2|Playing|
-|ERROR|int|-1|Errors occurred while playing|
+| Constant  | Type | Value | Description                   |
+|-----------|------|-------|-------------------------------|
+| IDLE      | int  | 0     | Finish playing                |
+| PREPARING | int  | 1     | Source preparing              |
+| PLAYING   | int  | 2     | Playing                       |
+| ERROR     | int  | -1    | Errors occurred while playing |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |status|int|Sequence's [status](#sequenceStatus)|
+  | Parameter | Type | Description                          |
+  |-----------|------|--------------------------------------|
+  | status    | int  | Sequence's [status](#sequenceStatus) |
 
 - **Prototype**
 
@@ -594,9 +593,9 @@ interface OnSequencePlayStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnSequencePlayStatusChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                | Description                                           |
+  |-----------|-------------------------------------|-------------------------------------------------------|
+  | listener  | OnSequencePlayStatusChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -608,9 +607,9 @@ interface OnSequencePlayStatusChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnSequencePlayStatusChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                                | Description                                           |
+  |-----------|-------------------------------------|-------------------------------------------------------|
+  | listener  | OnSequencePlayStatusChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -640,25 +639,25 @@ package com.robotemi.sdk.listeners;
 interface OnGreetModeStateChangedListener {}
 ```
 
-#### Static constant <a name="greetModeState" />
+#### Static constant
 
-|Constant|Type|Value|Description|
-|-|-|-|-|
-|HOLD|int|0|Idle|
-|SEARCHING|int|1|Waiting a person|
-|PREPARING|int|2|Preparing for Greet mdoe|
-|GREETING|int|3|Greeting|
-|INTERACTION|int|4|User interaction|
-|POST_INTERACTION|int|5|User left|
-|ERROR|int|-1|Error occurred|
+| Constant         | Type | Value | Description              |
+|------------------|------|-------|--------------------------|
+| HOLD             | int  | 0     | Idle                     |
+| SEARCHING        | int  | 1     | Waiting a person         |
+| PREPARING        | int  | 2     | Preparing for Greet mdoe |
+| GREETING         | int  | 3     | Greeting                 |
+| INTERACTION      | int  | 4     | User interaction         |
+| POST_INTERACTION | int  | 5     | User left                |
+| ERROR            | int  | -1    | Error occurred           |
 
 #### Abstract methods
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |status|int|Greet mode's [state](#greetModeState)|
+  | Parameter | Type | Description                           |
+  |-----------|------|---------------------------------------|
+  | status    | int  | Greet mode's [state](#greetModeState) |
 
 - **Prototype**
 
@@ -670,9 +669,9 @@ interface OnGreetModeStateChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnGreetModeStateChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                            | Description                                           |
+  |-----------|---------------------------------|-------------------------------------------------------|
+  | listener  | OnGreetModeStateChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -684,9 +683,9 @@ interface OnGreetModeStateChangedListener {}
 
 - **Parameters**
 
-  |Parameter|Type|Description|
-  |-|-|-|
-  |listener|OnGreetModeStateChangedListener|An instance of a class that implements this interface|
+  | Parameter | Type                            | Description                                           |
+  |-----------|---------------------------------|-------------------------------------------------------|
+  | listener  | OnGreetModeStateChangedListener | An instance of a class that implements this interface |
 
 - **Prototype**
 
@@ -720,18 +719,18 @@ Used for holding the contact data.
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|firstName|String|First name of contact|
-|lastName|String|Last name of contact|
-|gender|String|Gender|
-|imageKey|String|The media key for the contact photo, Obtain the corresponding file input stream through the [getInputStreamByMediaKey(String mediaKey)](#getInputStreamByMediaKey) method.|
-|description|String|Description information|
-|userId|String|1. Contact ID for registered user, for temi registered users (userType = 0), it is MD5 format e.g. `d7cbcc25cc3fa002d28687ea1136324e`,<br> 2. A 24 hex-character string for contacts with only face images (userType = 1), e.g. `507fffffbcf86cd799430000`<br> 3. A 12 hex UUID for visitor (userType = 2), e.g. `3965f7ac0d8b`  (Supported in 129 version).<br> 4. If not recognized, this will be a face id that remains the same for each face when it stays in the camera frame. Face id will start from 1 in each recognition session. (userType = -1),From 129 version, launcher version 17009. <br>5. uid when face was registered by app from SDK. (userType = 3)|
-|age|int|Age (Supported in 129 version)|
-|userType|int|0: registered temi user。<br>1: temi contacts, unregistered temi user but with face images registered. <br> 2: Visitor under Greet Mode, UUID shall be available.<br> 3: SDK registered faces<br> -1: detected but not recognized. (Supported in 129 version)|
-|similarity|double|Similarity of current detection compared to the registered user or UUID face, range from 0.7 to 1.0  (Supported in 129 version)|
-|faceRect|[Rect](https://developer.android.com/reference/android/graphics/Rect)|The rectangle of face (Supported in 132 version)，In the range of 800 x 600 on temi V3 [Doc](https://github.com/robotemi/sdk/blob/5f0dc8d1a999ab0f4c874823e0d1fd1bbc30ec27/sdk/src/main/java/com/robotemi/sdk/face/ContactModel.kt#L15-L17)|
+| Attribute   | Type                                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| firstName   | String                                                                | First name of contact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| lastName    | String                                                                | Last name of contact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| gender      | String                                                                | Gender                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| imageKey    | String                                                                | The media key for the contact photo, Obtain the corresponding file input stream through the [getInputStreamByMediaKey(String mediaKey)](#getInputStreamByMediaKey) method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| description | String                                                                | Description information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| userId      | String                                                                | 1. Contact ID for registered user, for temi registered users (userType = 0), it is MD5 format e.g. `d7cbcc25cc3fa002d28687ea1136324e`,<br> 2. A 24 hex-character string for contacts with only face images (userType = 1), e.g. `507fffffbcf86cd799430000`<br> 3. A 12 hex UUID for visitor (userType = 2), e.g. `3965f7ac0d8b`  (Supported in 129 version).<br> 4. If not recognized, this will be a face id that remains the same for each face when it stays in the camera frame. Face id will start from 1 in each recognition session. (userType = -1),From 129 version, launcher version 17009. <br>5. uid when face was registered by app from SDK. (userType = 3) |
+| age         | int                                                                   | Age (Supported in 129 version)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| userType    | int                                                                   | 0: registered temi user。<br>1: temi contacts, unregistered temi user but with face images registered. <br> 2: Visitor under Greet Mode, UUID shall be available.<br> 3: SDK registered faces<br> -1: detected but not recognized. (Supported in 129 version)                                                                                                                                                                                                                                                                                                                                                                                                              |
+| similarity  | double                                                                | Similarity of current detection compared to the registered user or UUID face, range from 0.7 to 1.0  (Supported in 129 version)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| faceRect    | [Rect](https://developer.android.com/reference/android/graphics/Rect) | The rectangle of face (Supported in 132 version)，In the range of 800 x 600 on temi V3 [Doc](https://github.com/robotemi/sdk/blob/5f0dc8d1a999ab0f4c874823e0d1fd1bbc30ec27/sdk/src/main/java/com/robotemi/sdk/face/ContactModel.kt#L15-L17)                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 #### Sample
 
@@ -770,13 +769,13 @@ class SequenceModel {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|id|String|ID of sequence|
-|name|String|Name of sequence|
-|description|String|Description of sequence|
-|imageKey|String|The media key for the sequence photo, Obtain the corresponding signed URL through the [getSignedUrlByMediaKey()](#getSignedUrlByMediaKey) method.|
-|tags|List\<String\>|Tags of sequence|
+| Attribute   | Type           | Description                                                                                                                                       |
+|-------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| id          | String         | ID of sequence                                                                                                                                    |
+| name        | String         | Name of sequence                                                                                                                                  |
+| description | String         | Description of sequence                                                                                                                           |
+| imageKey    | String         | The media key for the sequence photo, Obtain the corresponding signed URL through the [getSignedUrlByMediaKey()](#getSignedUrlByMediaKey) method. |
+| tags        | List\<String\> | Tags of sequence                                                                                                                                  |
 
 ---
 
@@ -811,14 +810,14 @@ class TourModel {}
 
 #### Attributes
 
-|Attribute|Type|Description|
-|-|-|-|
-|id|String|ID of tour|
-|name|String|Name of tour|
-|description|String|Description of tour|
-|language|String|Language of tour|
-|imageKey|String|The media key for the tour cover image, Obtain the corresponding signed URL through the [getSignedUrlByMediaKey()](#getSignedUrlByMediaKey) method.|
-|tags|List\<String\>|Tags of tour|
+| Attribute   | Type           | Description                                                                                                                                         |
+|-------------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| id          | String         | ID of tour                                                                                                                                          |
+| name        | String         | Name of tour                                                                                                                                        |
+| description | String         | Description of tour                                                                                                                                 |
+| language    | String         | Language of tour                                                                                                                                    |
+| imageKey    | String         | The media key for the tour cover image, Obtain the corresponding signed URL through the [getSignedUrlByMediaKey()](#getSignedUrlByMediaKey) method. |
+| tags        | List\<String\> | Tags of tour                                                                                                                                        |
 
 ---
 
