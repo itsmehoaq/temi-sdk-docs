@@ -1,11 +1,10 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "temi SDK"
   text: "The way to develop skills for temi"
-  tagline: that take advantage of your robot's unique abilities!
+  tagline: and take advantage of your robot's unique abilities!
   actions:
     - theme: brand
       text: Documentation

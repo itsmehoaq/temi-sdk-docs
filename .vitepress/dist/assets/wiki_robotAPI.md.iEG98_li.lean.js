@@ -1,1 +1,0 @@
-import{_ as e,c as r,o,ag as i}from"./chunks/framework.DPDPlp3K.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/robotAPI.md","filePath":"wiki/robotAPI.md"}'),a={name:"wiki/robotAPI.md"};function d(s,t,n,l,b,h){return o(),r("div",null,t[0]||(t[0]=[i("",4)]))}const m=e(a,[["render",d]]);export{g as __pageData,m as default};
