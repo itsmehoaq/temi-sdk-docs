@@ -19,7 +19,7 @@ A map can be loaded, switched, backed up, and cached.
 
 There may be some confusion as map id is referred under its context.
 
-When reference map on algorithm wise, e.g. [MapDataModel](#mapDataModel), it has a map id which is unique across algorithm map, the one from process lidar data. This id should be only used by ROBOX as an identifier, and served no other purpose.
+When reference map on algorithm wise, e.g. [MapDataModel](#mapdatamodel), it has a map id which is unique across algorithm map, the one from process lidar data. This id should be only used by ROBOX as an identifier, and served no other purpose.
 
 When (SDK) users load a map, they are using the map id idenfying the combination. e.g. [MapModel](#mapmodel). This id is generated from temi cloud service when we back up a map to cloud. Thus it can be fetched from cloud, and reloaded to the robot.
 
@@ -33,7 +33,7 @@ When user backups or imports a map from UI or SDK, the map combination will be c
 
 From 131 version, with SDK 1.131.3, you can backup current map to you app, and load map backup from your app to temi. The whole process can be made offline, without using temi cloud services.
 
-Navigate to [Local Map Backup](https://github.com/robotemi/sdk/wiki/LocalMap) section for details.
+Navigate to [Local Map Backup](localMap) section for details.
 
 
 ### Multi-Floor
@@ -49,50 +49,50 @@ All the floors and their maps are stored locally on the robot and can be switche
 
 ## API Overview
 
-| Return                         | Method                                                                                                            | Description                                                        |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| boolean                        | [saveLocation(String location)](#saveLocation)                                                                    | Save location                                                      |
-| boolean                        | [deleteLocation(String location)](#deleteLocation)                                                                | Delete location                                                    |
-| List\<String\>               | [getLocations()](#getLocations)                                                                                   | Fetch all saved locations                                          |
-| void                           | [goTo()](#goTo)                                                                                                   | Send temi to a specific location                                   |
-| void                           | [goToPosition()](#goToPosition)                                                                                   | Send temi to a specific position(coordinate)                       |
-| [MapDataModel](#mapDataModel)  | [getMapData()](#getmapdata)                                                                                       | Get the map data                                                   |
-| void                           | [repose(Position position)](#repose)                                                                              | Repositioning temi                                                 |
-| List\<[MapModel](#mapModel)\> | [getMapList()](#getMapList)                                                                                       | Get the list of backed up map                                      |
-| String                         | [loadMap(String mapId)](#loadMap)                                                                                 | Load map by map ID                                                 |
-| String                         | [loadMap(String mapId, boolean reposeRequired, Position position, boolean offline, boolean withoutUI)](#loadmap-) | Load the map by map ID and the specific position of the target map |
-| boolean                        | [setMultiFloorEnabled(boolean enabled)](#setMultiFloorEnabled)                                                    | Enable/Disable Multi-floor function                                |
-| boolean                        | [isMultiFloorEnabled()](#isMultiFloorEnabled)                                                                     | Check Multi-floor function                                         |
-| [Floor](#floor)                | [getCurrentFloor()](#getCurrentFloor)                                                                             | Get current floor data                                             |
-| List\<[Floor](#floor)\>        | [getAllFloors()](#getAllFloors)                                                                                   | Get all floors' data                                               |
-| void                           | [loadFloor(int floorId, Position position)](#loadFloor)                                                           | load target floor                                                  |
-| Position                       | [getPosition()](#getPosition)                                                                                     | get current position                                               |
-| int                            | [resetMap()](#resetMap)                                                                                           | Reset map                                                          |
-| int                            | [finishMapping()](#finishMapping)                                                                                 | Finish mapping, lock the map                                       |
-| int                            | [updateMapName()](#updateMapName)                                                                                 | Update current map name                                            |
-| int                            | [continueMapping()](#continueMapping)                                                                             | Continue mapping, unlock the map                                   |
-| int                            | [upsertMapLayer()](#upsertMapLayer)                                                                               | Add or edit map layer                                              |
-| int                            | [deleteMapLayer()](#deleteMapLayer)                                                                               | Delete map layer                                                   |
+| Return                        | Method                                                                                                           | Description                                                        |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| boolean                       | [saveLocation(String location)](#savelocation)                                                                   | Save location                                                      |
+| boolean                       | [deleteLocation(String location)](#deletelocation)                                                               | Delete location                                                    |
+| List\<String\>                | [getLocations()](#getlocations)                                                                                  | Fetch all saved locations                                          |
+| void                          | [goTo()](#goto)                                                                                                  | Send temi to a specific location                                   |
+| void                          | [goToPosition()](#gotoposition)                                                                                  | Send temi to a specific position(coordinate)                       |
+| [MapDataModel](#mapdatamodel) | [getMapData()](#getmapdata)                                                                                      | Get the map data                                                   |
+| void                          | [repose(Position position)](#repose)                                                                             | Repositioning temi                                                 |
+| List\<[MapModel](#mapmodel)\> | [getMapList()](#getmaplist)                                                                                      | Get the list of backed up map                                      |
+| String                        | [loadMap(String mapId)](#loadmap)                                                                                | Load map by map ID                                                 |
+| String                        | [loadMap(String mapId, boolean reposeRequired, Position position, boolean offline, boolean withoutUI)](#loadmap) | Load the map by map ID and the specific position of the target map |
+| boolean                       | [setMultiFloorEnabled(boolean enabled)](#setmultifloorenabled)                                                   | Enable/Disable Multi-floor function                                |
+| boolean                       | [isMultiFloorEnabled()](#ismultifloorenabled)                                                                    | Check Multi-floor function                                         |
+| [Floor](#floor)               | [getCurrentFloor()](#getcurrentfloor)                                                                            | Get current floor data                                             |
+| List\<[Floor](#floor)\>       | [getAllFloors()](#getallfloors)                                                                                  | Get all floors' data                                               |
+| void                          | [loadFloor(int floorId, Position position)](#loadfloor)                                                          | load target floor                                                  |
+| Position                      | [getPosition()](#getposition)                                                                                    | get current position                                               |
+| int                           | [resetMap()](#resetmap)                                                                                          | Reset map                                                          |
+| int                           | [finishMapping()](#finishmapping)                                                                                | Finish mapping, lock the map                                       |
+| int                           | [updateMapName()](#updatemapname)                                                                                | Update current map name                                            |
+| int                           | [continueMapping()](#continuemapping)                                                                            | Continue mapping, unlock the map                                   |
+| int                           | [upsertMapLayer()](#upsertmaplayer)                                                                              | Add or edit map layer                                              |
+| int                           | [deleteMapLayer()](#deletemaplayer)                                                                              | Delete map layer                                                   |
 
 | Interface                                                                         | Description                                       |
 |-----------------------------------------------------------------------------------|---------------------------------------------------|
-| [OnLocationsUpdatedListener](#onLocationsUpdatedListener)                         | Locations updated listener                        |
-| [OnGoToLocationStatusChangedListener](#onGoToLocationStatusChangedListener)       | Go to location(position) status changed listener  |
-| [OnDistanceToLocationChangedListener](#onDistanceToLocationChangedListener)       | Distance to locations changed listener            |
-| [OnCurrentPositionChangedListener](#onCurrentPositionChangedListener)             | Current position changed listener                 |
-| [OnReposeStatusChangedListener](#onReposeStatusChangedListener)                   | Listener for the status changed of repositioning  |
-| [OnLoadMapStatusChangedListener](#onLoadMapStatusChangedListener)                 | Listener for the status changed of loading map    |
-| [OnDistanceToDestinationChangedListener](#onDistanceToDestinationChangedListener) | Listener for the distance left to the destination |
-| [OnLoadFloorStatusChangedListener](#onLoadFloorStatusChangedListener)             | Listener for the status of switching of floor     |
-| [OnRobotDragStateChangedListener](#onRobotDragStateChangedListener)               | Listener for robot being dragged                  |
-| [OnGoToNavPathChangedListener](#onGoToNavPathChangedListener)                     | Listener for robot navigation path                |
+| [OnLocationsUpdatedListener](#onlocationsupdatedlistener)                         | Locations updated listener                        |
+| [OnGoToLocationStatusChangedListener](#ongotolocationstatuschangedlistener)       | Go to location(position) status changed listener  |
+| [OnDistanceToLocationChangedListener](#ondistancetolocationchangedlistener)       | Distance to locations changed listener            |
+| [OnCurrentPositionChangedListener](#oncurrentpositionchangedlistener)             | Current position changed listener                 |
+| [OnReposeStatusChangedListener](#onreposestatuschangedlistener)                   | Listener for the status changed of repositioning  |
+| [OnLoadMapStatusChangedListener](#onloadmapstatuschangedlistener)                 | Listener for the status changed of loading map    |
+| [OnDistanceToDestinationChangedListener](#ondistancetodestinationchangedlistener) | Listener for the distance left to the destination |
+| [OnLoadFloorStatusChangedListener](#onloadfloorstatuschangedlistener)             | Listener for the status of switching of floor     |
+| [OnRobotDragStateChangedListener](#onrobotdragstatechangedlistener)               | Listener for robot being dragged                  |
+| [OnGoToNavPathChangedListener](#ongotonavpathchangedlistener)                     | Listener for robot navigation path                |
 
 | Model                         | Description                     |
 |-------------------------------|---------------------------------|
 | [Position](#position)         | Position(coordinate) in the map |
-| [MapDataModel](#mapDataModel) | The map data                    |
-| [MapImage](#mapImage)         | The map image data              |
-| [Floor](#floor)               | The floor data                  |
+| [MapDataModel](#mapdatamodel) | The map data                    |
+| [MapImage](#mapimage)         | The map image data              |
+| [Floor](#FLOOR)               | The floor data                  |
 
 
 

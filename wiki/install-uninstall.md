@@ -1,3 +1,12 @@
+---
+prev:
+   text: Getting Started
+   link: 'wiki/getting-started'
+next:
+   text: Robot API
+   link: 'wiki/robotAPI'
+---
+
 # Installing & Uninstalling
 
 You can begin by downloading ADB (Android Debug Bridge) on the computer you wish to develop for temi. Please follow [this](https://www.xda-developers.com/install-adb-windows-macos-linux/) tutorial on how to download and set up ADB on your computer.

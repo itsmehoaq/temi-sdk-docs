@@ -1,5 +1,43 @@
+---
+prev: false
+next: 
+  text: Install/Uninstall app on temi
+  link: '/wiki/install-uninstall'
+---
+
 # Getting Started
 Temi SDK is your way to develop skills for temi that take advantage of your robot's unique abilities! All development for temi is done on Android by creating an android application and importing Temi's SDK. temi V2's tablet runs on Android 6.0.1 (SDK level 23), and temi V3's tablet is running on Android 11 (SDK level 30). Always use the Sample app as a reference.
+
+### Using temi SDK in your project
+Prerequisite: [Java JDK](https://adoptium.net/temurin/releases/) (version 21 for best compatibility)
+
+In your Android app project, import the SDK to your `build.gradle` file:
+
+``` java    
+dependencies {
+   // existing dependencies above
+   implementation ("com.robotemi:sdk:1.135.1")
+}
+```
+
+or Maven:
+```xml
+<dependency>
+  <groupId>com.robotemi</groupId>
+  <artifactId>sdk</artifactId>
+  <version>1.135.1</version>
+</dependency>
+```
+Upon importing the dependency, you are ready to start using temi SDK by importing functions of your choice.
+
+Example:
+```java
+import com.robotemi.sdk.Robot;
+import com.robotemi.sdk.listeners.OnRobotReadyListener;
+import com.robotemi.sdk.navigation.model.Position;
+```
+
+Snapshots of the development version are available in [Sonatype's `snapshots` repository](https://oss.sonatype.org/content/repositories/snapshots/).
 
 ### Config in Your Application
 

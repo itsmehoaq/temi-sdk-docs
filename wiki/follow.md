@@ -1,3 +1,12 @@
+---
+prev:
+  text: Robot API
+  link: 'wiki/robotAPI'
+next:
+  text: Navigation & Map
+  link: 'wiki/location'
+---
+
 # Follow
 
 Be With Me AKA Follow Mode tells temi to search for a person that is standing next to it, lock on and then follow it's movement. Generally, a user would click on temi's top hard button or verbally ask temi to follow them, however, with the SDK you can trigger this feature programatically. temi also has the option to constraint follow, in this case temi tracks only on its axis using turn and tilt but with no movement.
@@ -6,15 +15,15 @@ Be With Me AKA Follow Mode tells temi to search for a person that is standing ne
 
 ## API Overview
 
-| Return | Method                                  | Description                    |
-|--------|-----------------------------------------|--------------------------------|
-| void   | [beWithMe()](#beWithMe)                 | Iitiate follow mode            |
-| void   | [constraintBeWith()](#constraintBeWith) | Iitiate constraint follow mode |
+| Return | Method                                  | Description                     |
+|--------|-----------------------------------------|---------------------------------|
+| void   | [beWithMe()](#bewithme)                 | Initiate follow mode            |
+| void   | [constraintBeWith()](#constraintbewith) | Initiate constraint follow mode |
 
 | Interface                                                                           | Description                                |
 |-------------------------------------------------------------------------------------|--------------------------------------------|
-| [OnBeWithMeStatusChangedListener](#onBeWithMeStatusChangedListener)                 | Listener for follow mode status            |
-| [OnConstraintBeWithStatusChangedListener](#onConstraintBeWithStatusChangedListener) | Listener for constraint follow mode status |
+| [OnBeWithMeStatusChangedListener](#onbewithmestatuschangedlistener)                 | Listener for follow mode status            |
+| [OnConstraintBeWithStatusChangedListener](#onconstraintbewithstatuschangedlistener) | Listener for constraint follow mode status |
 
 <br/>
 
@@ -23,8 +32,6 @@ Be With Me AKA Follow Mode tells temi to search for a person that is standing ne
 ### beWithMe()
 
 Use this method to manually invoke the follow mode. Follow mode is the state where temi searches for a person standing in front of it and once found it locks on and follows their movement until told otherwise.
-
-From 1.135.1, this method can take SpeedLevel as parameter to control follow speed
 
 - **Parameters**
 
@@ -44,7 +51,7 @@ From 1.135.1, this method can take SpeedLevel as parameter to control follow spe
 
 - **Support from**
 
-  0.10.36
+  0.10.35
 
 ---
 
@@ -64,7 +71,7 @@ Use this method to manually invoke the constraint follow mode. Constraint Follow
 
 - **Support from**
 
-  0.10.53
+  0.10.35
 
 <br/>
 
@@ -72,7 +79,7 @@ Use this method to manually invoke the constraint follow mode. Constraint Follow
 
 ### OnBeWithMeStatusChangedListener
 
-Set your context to implement this listener and add the override method to get the latest status regarding the follow mode. Possible statuses for follow mode are (value in parenthesis is the actual string value that will be returned).
+Set your context to implement this listener and add the override method to get the latest status regarding the follow mode. Possible statuses for follow mode are (value in parentheses is the actual string value that will be returned).
 
 #### Prototype
 
@@ -101,7 +108,7 @@ All constants here are only for the status of following.
 
   | Parameters | Type   | Description                                                 |
     |------------|--------|-------------------------------------------------------------|
-  | status     | String | [Status](#staticConstantOnBeWithMeStatus) of following mode |
+  | status     | String | [Status](#staticconstantonbewithmestatus) of following mode |
 
 - **Prototype**
 
